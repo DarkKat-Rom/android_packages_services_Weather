@@ -185,7 +185,7 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
             return;
         }
         mWeatherInfo = getWeather();
-        setTheme(getCustomThemeResId());
+//        setTheme(getCustomThemeResId());
         setContentView(R.layout.detailed_weather_main);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
@@ -304,18 +304,18 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         }
     }
 
-    private int getCustomThemeResId() {
-        int index = DetailedWeatherHelper.getTheme(this);
-        int resId = R.style.DetailedWeatherTheme;
-        if (index == DetailedWeatherHelper.THEME_MATERIAL_LIGHT) {
-            resId = R.style.DetailedWeatherThemeLight;
-        } else if (index == DetailedWeatherHelper.THEME_DARKKAT) {
-            resId = R.style.DetailedWeatherThemeDarkKat;
-        } else if (index == DetailedWeatherHelper.THEME_DARKKAT_BLUE) {
-            resId = R.style.DetailedWeatherThemeDarkKatBlue;
-        }
-        return resId;
-    }
+//    private int getCustomThemeResId() {
+//        int index = DetailedWeatherHelper.getTheme(this);
+//        int resId = R.style.DetailedWeatherTheme;
+//        if (index == DetailedWeatherHelper.THEME_MATERIAL_LIGHT) {
+//            resId = R.style.DetailedWeatherThemeLight;
+//        } else if (index == DetailedWeatherHelper.THEME_DARKKAT) {
+//            resId = R.style.DetailedWeatherThemeDarkKat;
+//        } else if (index == DetailedWeatherHelper.THEME_DARKKAT_BLUE) {
+//            resId = R.style.DetailedWeatherThemeDarkKatBlue;
+//        }
+//        return resId;
+//    }
 
     @Override
     public void onClick(View v) {

@@ -13,13 +13,25 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
 
-    <style name="Theme.Settings" parent="@android:style/Theme.Material.Settings">
+    <style name="Theme.Settings" parent="@android:style/Theme.Material.DayNight.DarkActionBar">
         <item name="android:colorPrimary">@color/settings_theme_primary</item>
         <item name="android:colorPrimaryDark">@color/settings_theme_primary_dark</item>
     </style>
 
+    <style name="Theme.DetailedWeather" parent="@android:style/Theme.Material.DayNight">
+        <item name="android:colorPrimary">@color/theme_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
+        <item name="android:statusBarColor">@color/theme_primary_dark</item>
+        <item name="android:actionBarStyle">@style/DetailedWeatherActionBarStyle</item>
+        <item name="android:actionBarTabBarStyle">@style/DetailedWeatherActionBarTabBarStyle</item>
+        <item name="android:actionBarTabTextStyle">@style/DetailedWeatherActionBarTabTextStyle</item>
+        <item name="dividerColor">@color/divider_color</item>
+        <item name="rippleColor">@color/ripple_color</item>
+    </style>
+
+<!--
     <style name="DetailedWeatherTheme" parent="@android:style/Theme.Material">
         <item name="android:colorPrimary">@color/theme_primary</item>
         <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
@@ -63,4 +75,5 @@
         <item name="dividerColor">@color/divider_color_blue</item>
         <item name="rippleColor">@color/ripple_color_blue</item>
     </style>
+-->
 </resources>

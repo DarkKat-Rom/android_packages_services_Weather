@@ -16,7 +16,7 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
   <string name="provider_title">Proveïdor del temps</string>
   <string name="units_title">Unitat</string>
   <string name="weather_progress_title">S\'està verificant la ubicació</string>
