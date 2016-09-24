@@ -36,7 +36,7 @@
         <!-- The detailed weather activity -->
         <activity
             android:name=".DetailedWeatherActivity"
-			android:theme="@style/Theme.DetailedWeather"
+            android:theme="@style/Theme.DetailedWeather"
             android:hardwareAccelerated="true"
             android:noHistory="true"
             android:launchMode="singleInstance"
