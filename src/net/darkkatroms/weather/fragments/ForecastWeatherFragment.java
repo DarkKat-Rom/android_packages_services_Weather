@@ -35,7 +35,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.internal.util.darkkat.DetailedWeatherHelper;
+import com.android.internal.util.darkkat.DetailedWeatherColorHelper;
+import com.android.internal.util.darkkat.ThemeHelper;
 import com.android.internal.util.darkkat.WeatherHelper;
 
 import net.darkkatroms.weather.Config;
@@ -111,14 +112,14 @@ public class ForecastWeatherFragment extends Fragment {
             }
         });
 
-        final boolean customizeColors = DetailedWeatherHelper.customizeColors(getActivity());
+        final boolean customizeColors = !ThemeHelper.detailedWeatherUseThemeColors(getActivity());
         if (customizeColors) {
-            final int accentColor = DetailedWeatherHelper.getAccentColor(getActivity());
-            final int backgroundColor = DetailedWeatherHelper.getContentBgColor(getActivity());
-            final int cardBackgroundColor = DetailedWeatherHelper.getCardsBgColor(getActivity());
-            final int textColorPrimary = DetailedWeatherHelper.getCardsTextColor(getActivity(), true);
-            final int textColorSecondary = DetailedWeatherHelper.getCardsTextColor(getActivity(), false);
-            final int rippleColor = DetailedWeatherHelper.getCardsRippleColor(getActivity());
+            final int accentColor = DetailedWeatherColorHelper.getAccentColor(getActivity());
+            final int backgroundColor = DetailedWeatherColorHelper.getContentBgColor(getActivity());
+            final int cardBackgroundColor = DetailedWeatherColorHelper.getCardBgColor(getActivity());
+            final int textColorPrimary = DetailedWeatherColorHelper.getCardPrimaryTextColor(getActivity());
+            final int textColorSecondary = DetailedWeatherColorHelper.getCardSecondaryTextColor(getActivity());
+            final int rippleColor = DetailedWeatherColorHelper.getCardRippleColor(getActivity());
             layout.setBackgroundColor(backgroundColor);
             mCard.setBackgroundTintList(ColorStateList.valueOf(cardBackgroundColor));
             mDayTemps.setTextColor(textColorPrimary);
@@ -200,7 +201,7 @@ public class ForecastWeatherFragment extends Fragment {
                 mMaxValue.setText(max);
                 if (mHolders.size() != hourForecasts.size()) {
                     final boolean customizeColors =
-                            DetailedWeatherHelper.customizeColors(getActivity());
+                            !ThemeHelper.detailedWeatherUseThemeColors(getActivity());
                     if (mCardsLayout.getChildCount() > 1) {
                         mCardsLayout.removeViews(1, mCardsLayout.getChildCount() - 1);
                     }
@@ -303,17 +304,17 @@ public class ForecastWeatherFragment extends Fragment {
 
         public void setColors(boolean customizeColors) {
             final int conditionImageColor = 
-                    DetailedWeatherHelper.getConditionImageColor(getActivity());
+                    DetailedWeatherColorHelper.getConditionImageColor(getActivity());
             if (customizeColors) {
-                final int cardBackgroundColor = DetailedWeatherHelper.getCardsBgColor(getActivity());
+                final int cardBackgroundColor = DetailedWeatherColorHelper.getCardBgColor(getActivity());
                 final int textColorPrimary = 
-                        DetailedWeatherHelper.getCardsTextColor(getActivity(), true);
+                        DetailedWeatherColorHelper.getCardPrimaryTextColor(getActivity());
                 final int textColorSecondary = 
-                        DetailedWeatherHelper.getCardsTextColor(getActivity(), false);
-                final int iconColor = DetailedWeatherHelper.getCardsIconColor(getActivity());
-                final int dividerAlpha = DetailedWeatherHelper.getDividerAlpha(getActivity());
-                final int dividerColor = (dividerAlpha << 24) | (textColorPrimary & 0x00ffffff);
-                final int rippleColor = DetailedWeatherHelper.getCardsRippleColor(getActivity());
+                        DetailedWeatherColorHelper.getCardSecondaryTextColor(getActivity());
+                final int iconColor = DetailedWeatherColorHelper.getCardIconColor(getActivity());
+                final int dividerAlpha = DetailedWeatherColorHelper.getDividerAlpha(getActivity());
+                final int dividerColor = (dividerAlpha << 24) | (iconColor & 0x00ffffff);
+                final int rippleColor = DetailedWeatherColorHelper.getCardRippleColor(getActivity());
 
                 card.setBackgroundTintList(ColorStateList.valueOf(cardBackgroundColor));
                 forecast.setTextColor(textColorPrimary);
@@ -401,7 +402,8 @@ public class ForecastWeatherFragment extends Fragment {
 
         public void updateWeather(HourForecast h) {
             final Drawable icon = mWeatherInfo.getConditionIcon(
-                    DetailedWeatherHelper.getConditionIconType(getActivity()), h.getConditionCode());
+                    WeatherHelper.getDetailedWeatherConditionIconType(getActivity()),
+                    h.getConditionCode());
             final String rain = h.getFormattedRain();
             final String snow = h.getFormattedSnow();
             final String noPrecipitationValue = getActivity().getResources().getString(

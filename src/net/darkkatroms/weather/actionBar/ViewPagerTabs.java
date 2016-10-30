@@ -35,7 +35,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.internal.util.darkkat.DetailedWeatherHelper;
+import com.android.internal.util.darkkat.DetailedWeatherColorHelper;
+import com.android.internal.util.darkkat.ThemeHelper;
 
 import net.darkkatroms.weather.R;
 
@@ -118,12 +119,12 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
 
         mSidePadding = (int) (getResources().getDisplayMetrics().density * TAB_SIDE_PADDING_IN_DPS);
 
-        final boolean customizeColors = DetailedWeatherHelper.customizeColors(context);
+        final boolean customizeColors = !ThemeHelper.detailedWeatherUseThemeColors(context);
         final TypedArray a = context.obtainStyledAttributes(attrs, ATTRS);
         mTextSize = a.getDimensionPixelSize(0, 0);
         mTextStyle = a.getInt(1, 0);
         if (customizeColors) {
-            mTextColor = DetailedWeatherHelper.getActionBarTabTextColors(context);
+            mTextColor = DetailedWeatherColorHelper.getActionBarTabTextColors(context);
         } else {
             mTextColor = a.getColorStateList(2);
         }
@@ -181,9 +182,9 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
 
             RippleDrawable bg = (RippleDrawable) getContext().getResources().getDrawable(
                     R.drawable.view_pager_tab_background).mutate();
-            final boolean customizeColors = DetailedWeatherHelper.customizeColors(getContext());
+            final boolean customizeColors = !ThemeHelper.detailedWeatherUseThemeColors(getContext());
             if (customizeColors) {
-                final int rippleColor = DetailedWeatherHelper.getActionBarRippleColor(getContext());
+                final int rippleColor = DetailedWeatherColorHelper.getActionBarRippleColor(getContext());
                 bg.setColor(ColorStateList.valueOf(rippleColor));
             }
             mTabTitleViews[position].setBackground(bg);

@@ -54,7 +54,9 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-import com.android.internal.util.darkkat.DetailedWeatherHelper;
+import com.android.internal.util.darkkat.DetailedWeatherColorHelper;
+import com.android.internal.util.darkkat.ThemeHelper;
+import com.android.internal.util.darkkat.WeatherHelper;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -150,13 +152,13 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         MenuItem itemUpdate = menu.findItem(R.id.item_update);
         LinearLayout updateButtonLayout = (LinearLayout) itemUpdate.getActionView();
         mUpdateButton = (ImageView) updateButtonLayout.findViewById(R.id.update_button);
-        final boolean customizeColors = DetailedWeatherHelper.customizeColors(this);
+        final boolean customizeColors = !ThemeHelper.detailedWeatherUseThemeColors(this);
 
         updateButtonLayout.setOnClickListener(this);
         updateButtonLayout.setOnLongClickListener(this);
         if (customizeColors) {
-            final int iconColor = DetailedWeatherHelper.getActionBarIconColor(this);
-            final int rippleColor = DetailedWeatherHelper.getActionBarRippleColor(this);
+            final int iconColor = DetailedWeatherColorHelper.getActionBarIconColor(this);
+            final int rippleColor = DetailedWeatherColorHelper.getActionBarRippleColor(this);
             mUpdateButton.setImageTintList(ColorStateList.valueOf(iconColor));
             ((RippleDrawable) updateButtonLayout.getBackground())
                     .setColor(ColorStateList.valueOf(rippleColor));
@@ -185,7 +187,6 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
             return;
         }
         mWeatherInfo = getWeather();
-//        setTheme(getCustomThemeResId());
         setContentView(R.layout.detailed_weather_main);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
@@ -215,15 +216,16 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
 
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mToolbar.setTitle(getResources().getString(R.string.action_bar_current_title)
-                + (DetailedWeatherHelper.showLocation(this) ? ", " + mWeatherInfo.getCity() : ""));
+                + (WeatherHelper.detailedWeatherShowLocation(this)
+                ? ", " + mWeatherInfo.getCity() : ""));
         mToolbar.setSubtitle(mToolbarSubTitles.get(0));
 
-        final boolean customizeColors = DetailedWeatherHelper.customizeColors(this);
+        final boolean customizeColors = !ThemeHelper.detailedWeatherUseThemeColors(this);
         if (customizeColors) {
-            final int statusBarBgColor = DetailedWeatherHelper.getStatusBarBgColor(this);
-            final int actionBarBgColor = DetailedWeatherHelper.getActionBarBgColor(this);
-            final int textColorPrimary = DetailedWeatherHelper.getActionBarTextColor(this, true);
-            final int textColorSecondary = DetailedWeatherHelper.getActionBarTextColor(this, false);
+            final int statusBarBgColor = DetailedWeatherColorHelper.getStatusBarBgColor(this);
+            final int actionBarBgColor = DetailedWeatherColorHelper.getActionBarBgColor(this);
+            final int textColorPrimary = DetailedWeatherColorHelper.getActionBarPrimaryTextColor(this);
+            final int textColorSecondary = DetailedWeatherColorHelper.getActionBarSecondaryTextColor(this);
             View toolbarFrame = findViewById(R.id.toolbar_frame);
             getWindow().setStatusBarColor(statusBarBgColor);
             toolbarFrame.setBackgroundColor(actionBarBgColor);
@@ -238,7 +240,7 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         Bundle b = getIntent().getExtras();
         int day = 0;
         if (b != null) {
-            day = getTabPositionForTextDirection(b.getInt(DetailedWeatherHelper.DAY_INDEX));
+            day = getTabPositionForTextDirection(b.getInt(WeatherHelper.DAY_INDEX));
         }
         if (day != 0) {
             mTabPager.setCurrentItem(day, false);
@@ -285,7 +287,8 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
                 }
             }
             mToolbar.setTitle(getResources().getString(R.string.action_bar_current_title)
-                    + (DetailedWeatherHelper.showLocation(this) ? ", " + mWeatherInfo.getCity() : ""));
+                    + (WeatherHelper.detailedWeatherShowLocation(this)
+                    ? ", " + mWeatherInfo.getCity() : ""));
             final int tabPosition = getTabPositionForTextDirection(mTabPager.getCurrentItem());
             mToolbar.setSubtitle(mToolbarSubTitles.get(tabPosition));
             mViewPagerTabs.setTabTitles(mTabTitles);
@@ -303,19 +306,6 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
             }
         }
     }
-
-//    private int getCustomThemeResId() {
-//        int index = DetailedWeatherHelper.getTheme(this);
-//        int resId = R.style.DetailedWeatherTheme;
-//        if (index == DetailedWeatherHelper.THEME_MATERIAL_LIGHT) {
-//            resId = R.style.DetailedWeatherThemeLight;
-//        } else if (index == DetailedWeatherHelper.THEME_DARKKAT) {
-//            resId = R.style.DetailedWeatherThemeDarkKat;
-//        } else if (index == DetailedWeatherHelper.THEME_DARKKAT_BLUE) {
-//            resId = R.style.DetailedWeatherThemeDarkKatBlue;
-//        }
-//        return resId;
-//    }
 
     @Override
     public void onClick(View v) {
