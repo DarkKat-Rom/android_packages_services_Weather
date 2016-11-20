@@ -16,7 +16,9 @@
 <resources>
 
     <!-- Theme  Darkkat -->
+    <color name="darkkat_blue_blue_grey">#ff1f2429</color>
 
     <!-- Detailed weather -->
+    <color name="card_background_color">@color/darkkat_blue_blue_grey</color>
     <color name="divider_color">#33ffffff</color>
 </resources>
