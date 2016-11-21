@@ -18,10 +18,6 @@
     <!-- Theme  Blackout -->
     <color name="primary_color_blackout">#ff101010</color>
 
-    <!-- Settings -->
-    <color name="settings_theme_primary">@color/primary_color_blackout</color>
-    <color name="settings_theme_primary_dark">#ff000000</color>
-
     <!-- Detailed weather -->
     <color name="theme_primary">@color/primary_color_blackout</color>
     <color name="theme_primary_dark">#ff000000</color>
