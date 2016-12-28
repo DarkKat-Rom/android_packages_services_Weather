@@ -21,6 +21,7 @@ import java.util.Date;
 
 import android.Manifest;
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
@@ -45,6 +46,7 @@ public class WeatherService extends Service {
     private static final boolean DEBUG = false;
     private static final String ACTION_UPDATE = "net.darkkatroms.weather.ACTION_UPDATE";
     private static final String ACTION_ALARM = "net.darkkatroms.weather.ACTION_ALARM";
+    private static final String ACTION_NOTIFICATION = "net.darkkatroms.weather.ACTION_NOTIFICATION";
 
     private static final String EXTRA_FORCE = "force";
 
@@ -61,6 +63,8 @@ public class WeatherService extends Service {
     private PowerManager.WakeLock mWakeLock;
     private boolean mRunning;
     private static PendingIntent mAlarm;
+
+    private NotificationUtil mNotificationUtil;
 
     private static final Criteria sLocationCriteria;
     static {
@@ -86,10 +90,15 @@ public class WeatherService extends Service {
         mHandler = new Handler(mHandlerThread.getLooper());
         PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
         mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
+        mNotificationUtil = new NotificationUtil(this);
     }
 
     public static void startUpdate(Context context, boolean force) {
         start(context, ACTION_UPDATE, force);
+    }
+
+    public static void startNotificationUpdate(Context context) {
+        start(context, ACTION_NOTIFICATION, false);
     }
 
     private static void start(Context context, String action, boolean force) {
@@ -120,6 +129,12 @@ public class WeatherService extends Service {
             Log.w(TAG, "Service started, but not enabled ... stopping");
             stopSelf();
             return START_NOT_STICKY;
+        }
+
+        if (ACTION_NOTIFICATION.equals(intent.getAction())) {
+            Log.w(TAG, "Update notification");
+            updateNotification();
+            return START_REDELIVER_INTENT;
         }
 
         if (ACTION_CANCEL_LOCATION_UPDATE.equals(intent.getAction())) {
@@ -224,6 +239,15 @@ public class WeatherService extends Service {
         }
     }
 
+    private void updateNotification() {
+        mHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                mNotificationUtil.sendNotification();
+            }
+        });
+    }
+
     private void updateWeather() {
         mHandler.post(new Runnable() {
             @Override
@@ -250,6 +274,9 @@ public class WeatherService extends Service {
                     if (w != null) {
                         Config.setWeatherData(WeatherService.this, w);
                         WeatherContentProvider.updateCachedWeatherInfo(WeatherService.this);
+                        if (Config.getShowNotification(WeatherService.this)) {
+                            mNotificationUtil.sendNotification();
+                        }
                     }
                 } finally {
                     mWakeLock.release();
@@ -262,6 +289,11 @@ public class WeatherService extends Service {
                 }
             }
          });
+    }
+
+    public static void removeNotification(Context context) {
+        ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE))
+                .cancel(NotificationUtil.NOTIFICATION_ID);
     }
 
     private boolean checkPermissions() {

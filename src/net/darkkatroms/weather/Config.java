@@ -23,6 +23,7 @@ import android.preference.PreferenceManager;
 
 public class Config {
     public static final String PREF_KEY_ENABLE               = "enable";
+    public static final String PREF_KEY_SHOW_NOTIFICATION    = "show_notification";
     public static final String PREF_KEY_AUTO_UPDATE          = "auto_update";
     public static final String PREF_KEY_UPDATE_INTERVAL      = "update_interval";
     public static final String PREF_KEY_PROVIDER             = "provider";
@@ -49,6 +50,20 @@ public class Config {
                 .getDefaultSharedPreferences(context);
 
         return prefs.edit().putBoolean(PREF_KEY_ENABLE, value).commit();
+    }
+
+    public static boolean getShowNotification(Context context) {
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        return prefs.getBoolean(PREF_KEY_SHOW_NOTIFICATION, false);
+    }
+
+    public static boolean setShowNotification(Context context, boolean value) {
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        return prefs.edit().putBoolean(PREF_KEY_SHOW_NOTIFICATION, value).commit();
     }
 
     public static boolean isAutoUpdate(Context context) {

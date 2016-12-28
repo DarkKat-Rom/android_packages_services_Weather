@@ -18,4 +18,7 @@
     <dimen name="tab_selected_underline_height">2dp</dimen>
     <dimen name="tab_text_size">14sp</dimen>
     <dimen name="tab_elevation">2dp</dimen>
+
+    <dimen name="notification_small_icon_size">24dp</dimen>
+    <dimen name="notification_small_icon_text_dimension">20dp</dimen>
 </resources>

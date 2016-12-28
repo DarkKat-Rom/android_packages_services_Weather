@@ -56,6 +56,7 @@
 
     <!-- Settings -->
 	<string name="weather_settings_title">Wetter Einstellungen</string>
+	<string name="show_notification_title">Laufende Benachrichtigung anzeigen</string>
 	<string name="owm_api_key_title">Open Weather Map API Key</string>
 	<string name="default_api_key_title">Standard Darkkat API Key</string>
 	<string name="custom_api_key_summary">Eigener API key</string>

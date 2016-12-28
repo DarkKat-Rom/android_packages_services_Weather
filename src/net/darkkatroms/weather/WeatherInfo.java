@@ -277,6 +277,10 @@ public class WeatherInfo {
         return mConditionCode;
     }
 
+    public String getTemperature() {
+        return getTemperature(mTemperature);
+    }
+
     public String getFormattedTemperature() {
         return getFormattedTemperature(mTemperature, mTempUnit);
     }
