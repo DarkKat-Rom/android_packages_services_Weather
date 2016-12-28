@@ -44,12 +44,11 @@ public class SettingsActivity extends PreferenceActivity implements
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 0;
 
     private SwitchPreference mEnable;
-//    private CheckBoxPreference mAutoUpdates;
+    private SwitchPreference mShowNotification;
     private ListPreference mUpdateInterval;
-//    private ListPreference mProvider;
     private EditTextPreference mOWMApiKey;
     private ListPreference mUnits;
-    private CheckBoxPreference mCustomLocation;
+    private SwitchPreference mCustomLocation;
     private CustomLocationPreference mLocation;
 
     private SharedPreferences mPrefs;
@@ -60,6 +59,7 @@ public class SettingsActivity extends PreferenceActivity implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
         addPreferencesFromResource(R.xml.settings);
@@ -67,7 +67,9 @@ public class SettingsActivity extends PreferenceActivity implements
         int idx;
 
         mEnable = (SwitchPreference) findPreference(Config.PREF_KEY_ENABLE);
-        //mAutoUpdates = (CheckBoxPreference) findPreference(Config.PREF_KEY_AUTO_UPDATE);
+
+        mShowNotification = (SwitchPreference) findPreference(Config.PREF_KEY_SHOW_NOTIFICATION);
+        mShowNotification.setOnPreferenceChangeListener(this);
 
         mUpdateInterval = (ListPreference) findPreference(Config.PREF_KEY_UPDATE_INTERVAL);
         mUpdateInterval.setOnPreferenceChangeListener(this);
@@ -75,15 +77,6 @@ public class SettingsActivity extends PreferenceActivity implements
                 mUpdateInterval.getEntryValues()[0].toString()));
         mUpdateInterval.setValueIndex(idx);
         mUpdateInterval.setSummary(mUpdateInterval.getEntries()[idx]);
-
-/*
-        mProvider = (ListPreference) findPreference(Config.PREF_KEY_PROVIDER);
-        mProvider.setOnPreferenceChangeListener(this);
-        idx = mProvider.findIndexOfValue(mPrefs.getString(Config.PREF_KEY_PROVIDER,
-                mProvider.getEntryValues()[0].toString()));
-        mProvider.setValueIndex(idx);
-        mProvider.setSummary(mProvider.getEntries()[idx]);
- */
 
         mOWMApiKey = (EditTextPreference) findPreference(Config.PREF_KEY_OWM_API_KEY);
         mOWMApiKey.getEditText().setHint(getResources().getString(
@@ -100,7 +93,7 @@ public class SettingsActivity extends PreferenceActivity implements
         mUnits.setValueIndex(idx);
         mUnits.setSummary(mUnits.getEntries()[idx]);
 
-        mCustomLocation = (CheckBoxPreference) findPreference(Config.PREF_KEY_CUSTOM_LOCATION);
+        mCustomLocation = (SwitchPreference) findPreference(Config.PREF_KEY_CUSTOM_LOCATION);
 
         mLocation = (CustomLocationPreference) findPreference(Config.PREF_KEY_CUSTOM_LOCATION_CITY);
         if (mPrefs.getBoolean(Config.PREF_KEY_ENABLE, false)
@@ -136,15 +129,6 @@ public class SettingsActivity extends PreferenceActivity implements
                 }
             }
             return true;
-/*
-        } else if (preference == mAutoUpdates) {
-            if (mAutoUpdates.isChecked()) {
-                WeatherService.startUpdate(this, true);
-            } else {
-                WeatherService.cancelUpdate(this);
-            }
-            return true;
- */
         } else if (preference == mEnable) {
             if (mEnable.isChecked()) {
                 if (!mCustomLocation.isChecked()) {
@@ -163,22 +147,15 @@ public class SettingsActivity extends PreferenceActivity implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-/*
-        if (preference == mProvider) {
-            String value = (String) newValue;
-            int idx = mProvider.findIndexOfValue(value);
-            mProvider.setSummary(mProvider.getEntries()[idx]);
-            mProvider.setValueIndex(idx);
-            if (mCustomLocation.isChecked() && Config.getLocationName(this) != null) {
-                // city ids are provider specific - so we need to recheck
-                new WeatherLocationTask(this, Config.getLocationName(this), this).execute();
+        if (preference == mShowNotification) {
+            boolean value = (Boolean) newValue;
+            if (value) {
+                WeatherService.startNotificationUpdate(this);
             } else {
-                WeatherService.startUpdate(this, true);
+                WeatherService.removeNotification(this);
             }
             return true;
         } else if (preference == mUnits) {
- */
-        if (preference == mUnits) {
             String value = (String) newValue;
             int idx = mUnits.findIndexOfValue(value);
             mUnits.setSummary(mUnits.getEntries()[idx]);
@@ -281,6 +258,7 @@ public class SettingsActivity extends PreferenceActivity implements
     private void disableService() {
         // stop any pending
         WeatherService.cancelUpdate(this);
+        WeatherService.removeNotification(this);
     }
 
     @Override
