@@ -77,6 +77,8 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
     private static final Uri WEATHER_URI =
             Uri.parse("content://net.darkkatroms.weather.provider/weather");
 
+    public static final String DAY_INDEX = "day_index";
+
     private static final String CURRENT_WEATHER_TAG = "current_weather";
     private static final String FORECAST_WEATHER_TAG = "forecast_weather_";
 
@@ -240,7 +242,7 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         Bundle b = getIntent().getExtras();
         int day = 0;
         if (b != null) {
-            day = getTabPositionForTextDirection(b.getInt(WeatherHelper.DAY_INDEX));
+            day = getTabPositionForTextDirection(b.getInt(DAY_INDEX));
         }
         if (day != 0) {
             mTabPager.setCurrentItem(day, false);

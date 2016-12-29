@@ -20,6 +20,7 @@
     <color name="tab_accent_color">#ffffff</color>
     <color name="tab_ripple_color">@color/tab_accent_color</color>
     <color name="tab_selected_underline_color">@color/tab_accent_color</color>
+    <color name="notification_action_icon_tint">#8a000000</color>   <!-- 54% black -->
 
     <!-- Theme Material light -->
 
