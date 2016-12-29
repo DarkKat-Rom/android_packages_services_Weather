@@ -18,6 +18,7 @@
 package net.darkkatroms.weather;
 
 import android.app.Notification;
+import android.app.Notification.Action;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -28,6 +29,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Icon;
+import android.os.Bundle;
 import android.widget.RemoteViews;
 
 import net.darkkatroms.weather.WeatherInfo.DayForecast;
@@ -65,8 +67,8 @@ public class NotificationUtil {
             .setStyle(new Notification.DecoratedCustomViewStyle())
             .setCustomContentView(getCollapsedContent(info))
             .setCustomBigContentView(getExpandedContent(info))
-            .setContentIntent(getContentIntent())
-            .setColor(0xff009688);
+            .setColor(0xff009688)
+            .addAction(getSettingsAction());
 
         return builder.build();
     }
@@ -104,6 +106,7 @@ public class NotificationUtil {
         String text = info.getCity();
         RemoteViews collapsedContent = new RemoteViews(mContext.getPackageName(),
                 R.layout.notification_collapsed_content);
+        collapsedContent.setOnClickPendingIntent(R.id.collapsed_content, getContentIntent(5, 0));
 
         collapsedContent.setImageViewIcon(R.id.content_image, icon);
         collapsedContent.setTextViewText(R.id.content_title, title);
@@ -121,6 +124,8 @@ public class NotificationUtil {
         for (int i = 0; i < 5; i++) {
             RemoteViews dayContent = new RemoteViews(mContext.getPackageName(),
                     R.layout.notification_expanded_content_item);
+            dayContent.setOnClickPendingIntent(R.id.expanded_content_item, getContentIntent(i, i));
+
             DayForecast d = forecasts.get(i);
             String dayName = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT,
                     Locale.getDefault());
@@ -145,11 +150,26 @@ public class NotificationUtil {
         return icon;
     }
 
-    private PendingIntent getContentIntent() {
+    private PendingIntent getContentIntent(int requestCode, int day) {
+        Bundle b = new Bundle();
+        b.putInt(DetailedWeatherActivity.DAY_INDEX, day);
         Intent intent = new Intent(mContext, DetailedWeatherActivity.class);
+        intent.putExtras(b);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 0, intent,
+        PendingIntent pendingIntent = PendingIntent.getActivity(mContext, requestCode, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         return pendingIntent;
+    }
+
+    private Action getSettingsAction() {
+        String title = mResources.getString(R.string.action_settings_title);
+        Intent intent = new Intent(mContext, SettingsActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 6, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Action.Builder builder = new Action.Builder(R.drawable.ic_notification_action_settings,
+                title, pendingIntent);
+        return builder.build();
     }
 }
