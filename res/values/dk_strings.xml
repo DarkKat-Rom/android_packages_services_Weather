@@ -56,11 +56,16 @@
 
     <!-- Settings -->
 	<string name="weather_settings_title">Weather settings</string>
-	<string name="show_notification_title">Show ongoing notification</string>
+	<string name="notification_title">Ongoing notification</string>
 	<string name="owm_api_key_title">Open Weather Map API key</string>
 	<string name="default_api_key_title">Default Darkkat API key</string>
 	<string name="custom_api_key_summary">Own API key</string>
 	<string name="owm_api_key_dlg_message">Enter the API key here, or delete API key, to use the default DarkKat API key</string>
+
+	<string name="notification_cat_secure_lockscreen_title">Secure lock screen</string>
+	<string name="show_notification_title">Show ongoing notification</string>
+	<string name="notification_show_location_title">Show location</string>
+	<string name="notification_show_secure_title">Show hidden content</string>
 
     <!-- Weather notification -->
 	<string name="action_settings_title">Settings</string>

@@ -58,6 +58,7 @@ public class NotificationUtil {
 
     private Notification createNotification() {
         WeatherInfo info =  Config.getWeatherData(mContext);
+        boolean showSecure =  Config.getNotificationShowSecure(mContext);
 
         Notification.Builder builder = new Notification.Builder(mContext)
             .setShowWhen(true)
@@ -69,6 +70,10 @@ public class NotificationUtil {
             .setCustomBigContentView(getExpandedContent(info))
             .setColor(0xff009688)
             .addAction(getSettingsAction());
+
+        if (showSecure) {
+            builder.setVisibility(Notification.VISIBILITY_PUBLIC);
+        }
 
         return builder.build();
     }
@@ -102,12 +107,13 @@ public class NotificationUtil {
 
     private RemoteViews getCollapsedContent(WeatherInfo info) {
         Icon icon = getConditionIcon(info.getConditionCode());
+        boolean showLocation =  Config.getNotificationShowLocation(mContext);
         String title = info.getFormattedTemperature() + " - " + info.getCondition();
-        String text = info.getCity();
+        String text = showLocation ? info.getCity() : "";
         RemoteViews collapsedContent = new RemoteViews(mContext.getPackageName(),
                 R.layout.notification_collapsed_content);
-        collapsedContent.setOnClickPendingIntent(R.id.collapsed_content, getContentIntent(5, 0));
 
+        collapsedContent.setOnClickPendingIntent(R.id.collapsed_content, getContentIntent(5, 0));
         collapsedContent.setImageViewIcon(R.id.content_image, icon);
         collapsedContent.setTextViewText(R.id.content_title, title);
         collapsedContent.setTextViewText(R.id.content_text, text);

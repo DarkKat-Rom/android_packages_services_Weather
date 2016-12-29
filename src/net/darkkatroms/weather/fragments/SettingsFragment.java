@@ -49,7 +49,6 @@ public class SettingsFragment extends PreferenceFragment implements
     private SharedPreferences mPrefs;
 
     private SwitchPreference mEnable;
-    private SwitchPreference mShowNotification;
     private ListPreference mUpdateInterval;
     private EditTextPreference mOWMApiKey;
     private ListPreference mUnits;
@@ -70,9 +69,6 @@ public class SettingsFragment extends PreferenceFragment implements
 
         mEnable = (SwitchPreference) findPreference(Config.PREF_KEY_ENABLE);
         mEnable.setOnPreferenceChangeListener(this);
-
-        mShowNotification = (SwitchPreference) findPreference(Config.PREF_KEY_SHOW_NOTIFICATION);
-        mShowNotification.setOnPreferenceChangeListener(this);
 
         mUpdateInterval = (ListPreference) findPreference(Config.PREF_KEY_UPDATE_INTERVAL);
         intvalue = Config.getUpdateInterval(getActivity());
@@ -133,14 +129,6 @@ public class SettingsFragment extends PreferenceFragment implements
                 }
             } else {
                 disableService();
-            }
-            return true;
-        } else if (preference == mShowNotification) {
-            value = (Boolean) newValue;
-            if (value) {
-                WeatherService.startNotificationUpdate(getActivity());
-            } else {
-                WeatherService.removeNotification(getActivity());
             }
             return true;
         } else if (preference == mUpdateInterval) {

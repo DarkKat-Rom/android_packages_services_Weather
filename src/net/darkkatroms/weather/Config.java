@@ -23,7 +23,6 @@ import android.preference.PreferenceManager;
 
 public class Config {
     public static final String PREF_KEY_ENABLE               = "enable";
-    public static final String PREF_KEY_SHOW_NOTIFICATION    = "show_notification";
     public static final String PREF_KEY_AUTO_UPDATE          = "auto_update";
     public static final String PREF_KEY_UPDATE_INTERVAL      = "update_interval";
     public static final String PREF_KEY_PROVIDER             = "provider";
@@ -35,6 +34,10 @@ public class Config {
     public static final String PREF_KEY_LOCATION_NAME        = "location_name";
     public static final String PREF_KEY_WEATHER_DATA         = "weather_data";
     public static final String PREF_KEY_LAST_UPDATE          = "last_update";
+
+    public static final String PREF_KEY_SHOW_NOTIF          = "show_notification";
+    public static final String PREF_KEY_NOTIF_SHOW_LOCATION = "notification_show_location";
+    public static final String PREF_KEY_NOTIF_SHOW_SECURE   = "notification_show_secure";
 
     public static final String DEFAULT_OWM_API_KEY = "6d2f4f034d60d9680a720c12df8c7ddd";
 
@@ -50,20 +53,6 @@ public class Config {
                 .getDefaultSharedPreferences(context);
 
         return prefs.edit().putBoolean(PREF_KEY_ENABLE, value).commit();
-    }
-
-    public static boolean getShowNotification(Context context) {
-        SharedPreferences prefs = PreferenceManager
-                .getDefaultSharedPreferences(context);
-
-        return prefs.getBoolean(PREF_KEY_SHOW_NOTIFICATION, false);
-    }
-
-    public static boolean setShowNotification(Context context, boolean value) {
-        SharedPreferences prefs = PreferenceManager
-                .getDefaultSharedPreferences(context);
-
-        return prefs.edit().putBoolean(PREF_KEY_SHOW_NOTIFICATION, value).commit();
     }
 
     public static boolean isAutoUpdate(Context context) {
@@ -183,5 +172,26 @@ public class Config {
                 .getDefaultSharedPreferences(context);
 
         prefs.edit().putLong(PREF_KEY_LAST_UPDATE, 0).commit();
+    }
+
+    public static boolean getShowNotification(Context context) {
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        return prefs.getBoolean(PREF_KEY_SHOW_NOTIF, false);
+    }
+
+    public static boolean getNotificationShowLocation(Context context) {
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        return prefs.getBoolean(PREF_KEY_NOTIF_SHOW_LOCATION, true);
+    }
+
+    public static boolean getNotificationShowSecure(Context context) {
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        return prefs.getBoolean(PREF_KEY_NOTIF_SHOW_SECURE, false);
     }
 }

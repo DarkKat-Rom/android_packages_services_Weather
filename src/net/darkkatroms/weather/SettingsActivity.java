@@ -20,12 +20,14 @@ package net.darkkatroms.weather;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
+import net.darkkatroms.weather.fragments.NotificationSettings;
 import net.darkkatroms.weather.fragments.SettingsFragment;
 
 public class SettingsActivity extends PreferenceActivity  {
 
     private static final String[] ENTRY_FRAGMENTS = {
-        SettingsFragment.class.getName()
+        SettingsFragment.class.getName(),
+        NotificationSettings.class.getName()
     };
 
     @Override
