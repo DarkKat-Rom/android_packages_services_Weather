@@ -22,10 +22,10 @@
 		android:title="@string/enable_title"
 		android:defaultValue="false" />
 
-	<SwitchPreference
-		android:key="show_notification"
-		android:title="@string/show_notification_title"
-		android:defaultValue="false"
+	<PreferenceScreen
+		android:key="notification"
+		android:title="@string/notification_title"
+        android:fragment="net.darkkatroms.weather.fragments.NotificationSettings"
 		android:dependency="enable" />
 
 	<ListPreference
