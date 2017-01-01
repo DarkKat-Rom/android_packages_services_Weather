@@ -20,5 +20,5 @@
     <dimen name="tab_elevation">2dp</dimen>
 
     <dimen name="notification_small_icon_size">24dp</dimen>
-    <dimen name="notification_small_icon_text_dimension">20dp</dimen>
+    <dimen name="notification_small_icon_max_text_height">12dp</dimen>
 </resources>

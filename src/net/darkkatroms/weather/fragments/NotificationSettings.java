@@ -31,6 +31,7 @@ public class NotificationSettings extends PreferenceFragment implements
 
     private SwitchPreference mShow;
     private SwitchPreference mShowLocation;
+    private SwitchPreference mShowDKIcon;
     private SwitchPreference mShowSecure;
 
     @Override
@@ -45,6 +46,10 @@ public class NotificationSettings extends PreferenceFragment implements
         mShowLocation =
                 (SwitchPreference) findPreference(Config.PREF_KEY_NOTIF_SHOW_LOCATION);
         mShowLocation.setOnPreferenceChangeListener(this);
+
+        mShowDKIcon =
+                (SwitchPreference) findPreference(Config.PREF_KEY_NOTIF_SHOW_DK_ICON);
+        mShowDKIcon.setOnPreferenceChangeListener(this);
 
         mShowSecure =
                 (SwitchPreference) findPreference(Config.PREF_KEY_NOTIF_SHOW_SECURE);
@@ -63,7 +68,8 @@ public class NotificationSettings extends PreferenceFragment implements
                 WeatherService.removeNotification(getActivity());
             }
             return true;
-        } else if (preference == mShowLocation || preference == mShowSecure) {
+        } else if (preference == mShowLocation
+                    || preference == mShowDKIcon || preference == mShowSecure) {
             updateNotification();
             return true;
         }
