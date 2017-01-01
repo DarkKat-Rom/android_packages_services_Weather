@@ -26,11 +26,14 @@ import android.content.res.Resources;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.text.TextPaint;
 import android.graphics.Rect;
+import android.graphics.Typeface;
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.widget.RemoteViews;
+import android.widget.TextView;
 
 import net.darkkatroms.weather.WeatherInfo.DayForecast;
 
@@ -58,18 +61,24 @@ public class NotificationUtil {
 
     private Notification createNotification() {
         WeatherInfo info =  Config.getWeatherData(mContext);
+        boolean showDKIcon =  Config.getNotificationShowDKIcon(mContext);
         boolean showSecure =  Config.getNotificationShowSecure(mContext);
 
         Notification.Builder builder = new Notification.Builder(mContext)
             .setShowWhen(true)
             .setWhen(System.currentTimeMillis())
             .setOngoing(true)
-            .setSmallIcon(textAsSmallIcon(info.getTemperature()))
             .setStyle(new Notification.DecoratedCustomViewStyle())
             .setCustomContentView(getCollapsedContent(info))
             .setCustomBigContentView(getExpandedContent(info))
             .setColor(0xff009688)
             .addAction(getSettingsAction());
+
+        if (showDKIcon) {
+            builder.setSmallIcon(R.drawable.ic_dk);
+        } else {
+            builder.setSmallIcon(textAsSmallIcon(info.getTemperature(), info.getFormattedTemperature()));
+        }
 
         if (showSecure) {
             builder.setVisibility(Notification.VISIBILITY_PUBLIC);
@@ -78,29 +87,51 @@ public class NotificationUtil {
         return builder.build();
     }
 
-    private Icon textAsSmallIcon(String text) {
+    private Icon textAsSmallIcon(String textSmall, String textLarge) {
         int iconSize = mResources.getDimensionPixelSize(R.dimen.notification_small_icon_size);
-        float desiredTextDimension = mResources.getDimension(R.dimen.notification_small_icon_size);
-        float textSize = 0;
-        float textHeight = 0;
+        int maxTextWidth = iconSize;
+        int maxTextHeight = mResources.getDimensionPixelSize(R.dimen.notification_small_icon_max_text_height);
+        int iconColor = mContext.getColor(R.color.notification_small_icon_color);
+        String usedText = textLarge;
+        float textSize = 0f;
+        float textHeight = 0f;
         float textX = iconSize * 0.5f;
-        float textY = 0;
+        float textY = 0f;
 
-        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        TextPaint paint = new TextPaint(TextPaint.ANTI_ALIAS_FLAG);
         Bitmap b = Bitmap.createBitmap(iconSize, iconSize, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(b);
         Rect bounds = new Rect();
 
-        paint.setTextAlign(Paint.Align.CENTER);
+        TextView tv = new TextView(mContext);
+        paint.setTextAlign(TextPaint.Align.CENTER);
+
+        tv.setTextAppearance(android.R.style.TextAppearance_Material_Notification_Info);
+        Typeface tf = tv.getTypeface();
+        paint.setTypeface(tv.getTypeface());
+        paint.setColor(iconColor);
+
         do {
             paint.setTextSize(textSize++);
-        } while (paint.measureText(text) < desiredTextDimension);
+            paint.getTextBounds(usedText, 0, usedText.length(), bounds);
+        } while (bounds.height() < maxTextHeight);
         paint.setTextSize(textSize);
-        paint.setColor(0xffffffff);
+
+        if (bounds.width() > maxTextWidth) {
+            usedText = textSmall;
+            paint.getTextBounds(usedText, 0, usedText.length(), bounds);
+            if (bounds.width() > maxTextWidth) {
+                do {
+                    paint.setTextSize(textSize--);
+                    paint.getTextBounds(usedText, 0, usedText.length(), bounds);
+                } while (bounds.width() > maxTextWidth);
+            }
+        }
+        paint.setTextSize(textSize);
 
         textHeight = -paint.getFontMetrics().ascent;
         textY = (iconSize + textHeight) * 0.47f;
-        canvas.drawText(text, textX, textY, paint);
+        canvas.drawText(usedText, textX, textY, paint);
 
         return Icon.createWithBitmap(b);
     }

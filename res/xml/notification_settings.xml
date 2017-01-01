@@ -30,6 +30,12 @@
 		android:defaultValue="true"
 		android:dependency="show_notification" />
 
+	<SwitchPreference
+		android:key="notification_show_dk_icon"
+		android:title="@string/notification_show_dk_icon_title"
+		android:defaultValue="true"
+		android:dependency="show_notification" />
+
     <PreferenceCategory
         android:key="notification_cat_secure_lockscreen"
         android:title="@string/notification_cat_secure_lockscreen_title">

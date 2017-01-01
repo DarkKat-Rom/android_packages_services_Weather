@@ -65,6 +65,7 @@
 	<string name="notification_cat_secure_lockscreen_title">Sicherer Sperrbildschirm</string>
 	<string name="show_notification_title">Benachrichtigung anzeigen</string>
 	<string name="notification_show_location_title">Standort anzeigen</string>
+	<string name="notification_show_dk_icon_title">DarkKat Icon anzeigen</string>
 	<string name="notification_show_secure_title">Ausgeblendeten Inhalt anzg.</string>
 
     <!-- Weather notification -->
