@@ -36,6 +36,7 @@
             android:name=".DetailedWeatherActivity"
             android:theme="@style/Theme.DetailedWeather"
             android:hardwareAccelerated="true"
+			android:exported="true"
             android:taskAffinity=""
             android:excludeFromRecents="true" />
 
