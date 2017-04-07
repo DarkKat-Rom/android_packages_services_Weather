@@ -144,10 +144,11 @@ public class NotificationUtil {
         RemoteViews collapsedContent = new RemoteViews(mContext.getPackageName(),
                 R.layout.notification_collapsed_content);
 
-        collapsedContent.setOnClickPendingIntent(R.id.collapsed_content, getContentIntent(5, 0));
-        collapsedContent.setImageViewIcon(R.id.content_image, icon);
-        collapsedContent.setTextViewText(R.id.content_title, title);
-        collapsedContent.setTextViewText(R.id.content_text, text);
+        collapsedContent.setOnClickPendingIntent(com.android.internal.R.id.collapsed_content,
+                getContentIntent(5, 0));
+        collapsedContent.setImageViewIcon(com.android.internal.R.id.content_image, icon);
+        collapsedContent.setTextViewText(com.android.internal.R.id.content_title, title);
+        collapsedContent.setTextViewText(com.android.internal.R.id.content_text, text);
         return collapsedContent;
     }
 
@@ -161,7 +162,8 @@ public class NotificationUtil {
         for (int i = 0; i < 5; i++) {
             RemoteViews dayContent = new RemoteViews(mContext.getPackageName(),
                     R.layout.notification_expanded_content_item);
-            dayContent.setOnClickPendingIntent(R.id.expanded_content_item, getContentIntent(i, i));
+            dayContent.setOnClickPendingIntent(com.android.internal.R.id.expanded_content_item,
+                    getContentIntent(i, i));
 
             DayForecast d = forecasts.get(i);
             String dayName = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT,
@@ -169,12 +171,12 @@ public class NotificationUtil {
             Icon icon = getConditionIcon(d.getConditionCode());
             String dayTemps = d.getFormattedLow() + " | " + d.getFormattedHigh();
 
-            dayContent.setTextViewText(R.id.content_item_day, dayName);
-            dayContent.setImageViewIcon(R.id.content_item_image, icon);
-            dayContent.setTextViewText(R.id.content_item_temp, dayTemps);
+            dayContent.setTextViewText(com.android.internal.R.id.content_item_day, dayName);
+            dayContent.setImageViewIcon(com.android.internal.R.id.content_item_image, icon);
+            dayContent.setTextViewText(com.android.internal.R.id.content_item_temp, dayTemps);
 
             calendar.roll(Calendar.DAY_OF_WEEK, true);
-            expandedContent.addView(R.id.expanded_content, dayContent);
+            expandedContent.addView(com.android.internal.R.id.expanded_content, dayContent);
         }
         return expandedContent;
     }
