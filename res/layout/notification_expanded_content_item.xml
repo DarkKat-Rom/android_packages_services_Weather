@@ -18,14 +18,14 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/expanded_content_item"
+    android:id="@*android:id/expanded_content_item"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_weight="1"
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/content_item_day"
+        android:id="@*android:id/content_item_day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -33,7 +33,7 @@
         android:textAppearance="@android:style/TextAppearance.Material.Notification.Title" />
 
     <ImageView
-        android:id="@+id/content_item_image"
+        android:id="@*android:id/content_item_image"
         android:maxWidth="40dp"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -45,7 +45,7 @@
         android:adjustViewBounds="true" />
 
     <TextView
-        android:id="@+id/content_item_temp"
+        android:id="@*android:id/content_item_temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
