@@ -24,9 +24,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.android.internal.util.darkkat.DetailedWeatherColorHelper;
-import com.android.internal.util.darkkat.ThemeHelper;
-
 import net.darkkatroms.weather.R;
 
 public class ViewPagerTabStrip extends LinearLayout {
@@ -43,22 +40,12 @@ public class ViewPagerTabStrip extends LinearLayout {
     public ViewPagerTabStrip(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        final boolean customizeColors = !ThemeHelper.detailedWeatherUseThemeColors(context);
         final Resources res = context.getResources();
 
         mSelectedUnderlineThickness =
                 res.getDimensionPixelSize(R.dimen.tab_selected_underline_height);
-
-        int backgroundColor;
+        int backgroundColor = res.getColor(R.color.actionbar_background_color);
         int underlineColor = res.getColor(R.color.tab_selected_underline_color);
-        if (customizeColors) {
-            backgroundColor = DetailedWeatherColorHelper.getActionBarBgColor(context);
-            underlineColor = DetailedWeatherColorHelper.getActionBarIconColor(context);
-        } else {
-            backgroundColor = res.getColor(R.color.actionbar_background_color);
-            underlineColor = res.getColor(R.color.tab_selected_underline_color);
-
-        }
 
         mSelectedUnderlinePaint = new Paint();
         mSelectedUnderlinePaint.setColor(underlineColor);

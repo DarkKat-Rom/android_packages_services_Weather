@@ -180,10 +180,11 @@ public class NotificationUtil {
     }
 
     private Icon getConditionIcon(int conditionCode) {
+        int iconTint = mContext.getColor(R.color.notification_condition_icon_tint);
         int iconResid = mResources.getIdentifier(
                 "weather_" + conditionCode, "drawable", mContext.getPackageName());
         Icon icon = Icon.createWithResource(mContext, iconResid);
-        icon.setTint(0xff009688);
+        icon.setTint(iconTint);
         return icon;
     }
 

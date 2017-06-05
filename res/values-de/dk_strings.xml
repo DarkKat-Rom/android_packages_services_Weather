@@ -55,7 +55,7 @@
 	<string name="precipitation_unit_3h_title">&#160;mm/3h</string>
 
     <!-- Settings -->
-	<string name="weather_settings_title">Wetter Einstellungen</string>
+	<string name="weather_title">Wetter</string>
 	<string name="notification_title">Laufende Benachrichtigung</string>
 	<string name="owm_api_key_title">Open Weather Map API Key</string>
 	<string name="default_api_key_title">Standard Darkkat API Key</string>
