@@ -32,6 +32,14 @@ public class SettingsActivity extends PreferenceActivity  {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        if (Config.getTheme(this) == 0) {
+            setTheme(R.style.AppTheme_DarkKat);
+        } else if (Config.getTheme(this) == 1) {
+            setTheme(R.style.AppTheme);
+        } else if (Config.getTheme(this) == 3) {
+            setTheme(R.style.AppTheme_Blackout);
+        }
+
         super.onCreate(savedInstanceState);
 
         if (savedInstanceState == null && getIntent().getStringExtra(EXTRA_SHOW_FRAGMENT) == null) {

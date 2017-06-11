@@ -48,6 +48,7 @@ public class SettingsFragment extends PreferenceFragment implements
 
     private SharedPreferences mPrefs;
 
+    private ListPreference mTheme;
     private SwitchPreference mEnable;
     private ListPreference mUpdateInterval;
     private EditTextPreference mOWMApiKey;
@@ -66,6 +67,12 @@ public class SettingsFragment extends PreferenceFragment implements
         mPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
         int intvalue;
+
+        mTheme = (ListPreference) findPreference(Config.PREF_KEY_THEME);
+        intvalue = Config.getTheme(getActivity());
+        mTheme.setValue(String.valueOf(intvalue));
+        mTheme.setSummary(mTheme.getEntry());
+        mTheme.setOnPreferenceChangeListener(this);
 
         mEnable = (SwitchPreference) findPreference(Config.PREF_KEY_ENABLE);
         mEnable.setOnPreferenceChangeListener(this);
@@ -118,7 +125,13 @@ public class SettingsFragment extends PreferenceFragment implements
         int intValue;
         int index;
 
-        if (preference == mEnable) {
+        if (preference == mTheme) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mTheme.findIndexOfValue((String) newValue);
+            preference.setSummary(mTheme.getEntries()[index]);
+            getActivity().recreate();
+            return true;
+        } else if (preference == mEnable) {
             value = (Boolean) newValue;
             if (value) {
                 if (!mCustomLocation.isChecked()) {

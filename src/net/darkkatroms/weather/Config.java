@@ -22,6 +22,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 public class Config {
+    public static final String PREF_KEY_THEME                = "theme";
     public static final String PREF_KEY_ENABLE               = "enable";
     public static final String PREF_KEY_AUTO_UPDATE          = "auto_update";
     public static final String PREF_KEY_UPDATE_INTERVAL      = "update_interval";
@@ -41,6 +42,14 @@ public class Config {
     public static final String PREF_KEY_NOTIF_SHOW_SECURE   = "notification_show_secure";
 
     public static final String DEFAULT_OWM_API_KEY = "6d2f4f034d60d9680a720c12df8c7ddd";
+
+    public static int getTheme(Context context) {
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        String valueString = prefs.getString(PREF_KEY_THEME, "0");
+        return Integer.valueOf(valueString);
+    }
 
     public static boolean isEnabled(Context context) {
         SharedPreferences prefs = PreferenceManager

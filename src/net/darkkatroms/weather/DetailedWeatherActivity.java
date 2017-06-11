@@ -133,6 +133,14 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        if (Config.getTheme(this) == 0) {
+            setTheme(R.style.AppTheme_DarkKat_DetailedWeather);
+        } else if (Config.getTheme(this) == 1) {
+            setTheme(R.style.AppTheme_DetailedWeather);
+        } else if (Config.getTheme(this) == 3) {
+            setTheme(R.style.AppTheme_Blackout_DetailedWeather);
+        }
+
         super.onCreate(savedInstanceState);
 
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
@@ -207,6 +215,10 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         mToolbar.setTitle(getResources().getString(R.string.action_bar_current_title)
                 + ", " + mWeatherInfo.getCity());
         mToolbar.setSubtitle(mToolbarSubTitles.get(0));
+        boolean blackoutTheme = Config.getTheme(this) == 3;
+        if (blackoutTheme) {
+            mToolbar.setBackgroundColor(getColor(R.color.actionbar_background_color_blackout));
+        }
         setActionBar(mToolbar);
 
         mViewPagerTabs = (ViewPagerTabs) findViewById(R.id.lists_pager_header);

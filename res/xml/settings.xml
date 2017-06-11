@@ -17,6 +17,12 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
+	<ListPreference
+		android:key="theme"
+		android:title="@string/theme_title"
+		android:entries="@array/theme_entries"
+		android:entryValues="@array/theme_values" />
+
 	<SwitchPreference
 		android:key="enable"
 		android:title="@string/enable_title"
