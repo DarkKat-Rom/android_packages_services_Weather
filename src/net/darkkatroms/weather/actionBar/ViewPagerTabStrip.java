@@ -47,7 +47,7 @@ public class ViewPagerTabStrip extends LinearLayout {
                 res.getDimensionPixelSize(R.dimen.tab_selected_underline_height);
         boolean blackoutTheme = Config.getTheme(context) == 3;
         int backgroundColor = res.getColor(blackoutTheme
-                ? R.color.actionbar_background_color_blackout : R.color.actionbar_background_color);
+                ? R.color.theme_primary_blackout : R.color.theme_primary);
         int underlineColor = res.getColor(R.color.tab_selected_underline_color);
 
         mSelectedUnderlinePaint = new Paint();

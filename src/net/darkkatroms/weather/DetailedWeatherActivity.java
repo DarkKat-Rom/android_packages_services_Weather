@@ -217,7 +217,7 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         mToolbar.setSubtitle(mToolbarSubTitles.get(0));
         boolean blackoutTheme = Config.getTheme(this) == 3;
         if (blackoutTheme) {
-            mToolbar.setBackgroundColor(getColor(R.color.actionbar_background_color_blackout));
+            mToolbar.setBackgroundColor(getColor(R.color.theme_primary_blackout));
         }
         setActionBar(mToolbar);
 

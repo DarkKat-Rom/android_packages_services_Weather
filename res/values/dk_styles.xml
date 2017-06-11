@@ -21,18 +21,18 @@
     </style>
 
     <style name="DetailedWeatherActionBarStyle" parent="@android:style/Widget.Material.ActionBar">
-        <item name="android:background">@color/actionbar_background_color</item>
+        <item name="android:background">@color/theme_primary</item>
         <item name="android:titleTextStyle">@style/DetailedWeatherActionBarTitleText</item>
         <item name="android:subtitleTextStyle">@style/DetailedWeatherActionBarSubtitleText</item>
-        <item name="android:backgroundStacked">@color/actionbar_background_color</item>
+        <item name="android:backgroundStacked">@color/theme_primary</item>
         <item name="android:icon">@android:color/transparent</item>
     </style>
 
     <style name="DetailedWeatherActionBarStyle.Blackout" parent="@android:style/Widget.Material.ActionBar">
-        <item name="android:background">@color/actionbar_background_color_blackout</item>
+        <item name="android:background">@color/theme_primary_blackout</item>
         <item name="android:titleTextStyle">@style/DetailedWeatherActionBarTitleText</item>
         <item name="android:subtitleTextStyle">@style/DetailedWeatherActionBarSubtitleText</item>
-        <item name="android:backgroundStacked">@color/actionbar_background_color_blackout</item>
+        <item name="android:backgroundStacked">@color/theme_primary_blackout</item>
         <item name="android:icon">@android:color/transparent</item>
     </style>
 

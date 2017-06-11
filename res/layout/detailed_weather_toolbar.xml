@@ -25,7 +25,7 @@
         android:id="@+id/toolbar_frame"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/actionbar_background_color">
+        android:background="@color/theme_primary">
 
         <Toolbar
             android:id="@+id/toolbar"
