@@ -22,6 +22,7 @@ import android.preference.PreferenceActivity;
 
 import net.darkkatroms.weather.fragments.NotificationSettings;
 import net.darkkatroms.weather.fragments.SettingsFragment;
+import net.darkkatroms.weather.utils.ThemeUtil;
 
 public class SettingsActivity extends PreferenceActivity  {
 
@@ -32,12 +33,14 @@ public class SettingsActivity extends PreferenceActivity  {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        if (Config.getTheme(this) == 0) {
-            setTheme(R.style.AppTheme_DarkKat);
-        } else if (Config.getTheme(this) == 1) {
-            setTheme(R.style.AppTheme);
-        } else if (Config.getTheme(this) == 3) {
-            setTheme(R.style.AppTheme_Blackout);
+        if (!ThemeUtil.isThemeMaterialLight(this)) {
+            getTheme().applyStyle(ThemeUtil.getAppThemeResId(this), true);
+        }
+        if (!ThemeUtil.isBlackoutTheme(this)
+                && !ThemeUtil.isWhiteoutTheme(this)) {
+            if (ThemeUtil.getThemeColors(this) != ThemeUtil.THEME_COLOR_DEFAULT) {
+                getTheme().applyStyle(ThemeUtil.getAppThemeOverlayResId(this), true);
+            }
         }
 
         super.onCreate(savedInstanceState);

@@ -15,6 +15,7 @@
 -->
 <resources>
 
+
     <style name="AppThemeBase" parent="@android:style/Theme.Material.Light.DarkActionBar">
         <item name="android:windowBackground">@color/theme_primary</item>
         <item name="android:colorPrimary">@color/theme_primary</item>
@@ -23,20 +24,17 @@
         <item name="android:windowAnimationStyle">@style/FadeTransition</item>
     </style>
 
-    <style name="AppTheme.DarkKat" parent="@android:style/Theme.Material">
-        <item name="android:colorBackground">@color/darkkat_blue_grey</item>
-        <item name="android:colorBackgroundFloating">@color/darkkat_blue_blue_grey</item>
-        <item name="android:colorPrimary">@color/theme_primary</item>
-        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
-        <item name="android:colorAccent">@color/theme_accent_blackout</item>
-        <item name="android:windowAnimationStyle">@style/FadeTransition</item>
-    </style>
-
+    <!-- Default app themes -->
     <style name="AppTheme" parent="@android:style/Theme.Material">
         <item name="android:colorPrimary">@color/theme_primary</item>
         <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
         <item name="android:colorAccent">@color/theme_accent</item>
         <item name="android:windowAnimationStyle">@style/FadeTransition</item>
+    </style>
+
+    <style name="AppTheme.DarkKat">
+        <item name="android:colorBackground">@color/darkkat_blue_grey</item>
+        <item name="android:colorBackgroundFloating">@color/darkkat_blue_blue_grey</item>
     </style>
 
     <style name="AppTheme.Light" parent="@android:style/Theme.Material.Light.DarkActionBar">
@@ -46,49 +44,73 @@
         <item name="android:windowAnimationStyle">@style/FadeTransition</item>
     </style>
 
-    <style name="AppTheme.Blackout" parent="@android:style/Theme.Material">
+    <style name="AppTheme.Blackout">
         <item name="android:colorBackground">@color/theme_primary_dark_blackout</item>
         <item name="android:colorBackgroundFloating">@color/theme_primary_blackout</item>
         <item name="android:colorPrimary">@color/theme_primary_blackout</item>
         <item name="android:colorPrimaryDark">@color/theme_primary_dark_blackout</item>
         <item name="android:colorAccent">@color/theme_accent_blackout</item>
-        <item name="android:windowAnimationStyle">@style/FadeTransition</item>
     </style>
 
-    <style name="AppTheme.DarkKat.DetailedWeather" parent="AppTheme">
-        <item name="android:colorBackground">@color/darkkat_blue_grey</item>
-        <item name="android:colorBackgroundFloating">@color/darkkat_blue_blue_grey</item>
+    <style name="AppTheme.Whiteout" parent="@android:style/Theme.Material.Light">
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:colorPrimary">@color/theme_primary_whiteout</item>
+        <item name="android:colorPrimaryDark">@color/theme_primary_dark_whiteout</item>
+        <item name="android:colorAccent">@color/theme_accent_whiteout</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- Default detailed weather themes -->
+    <style name="AppTheme.DetailedWeather">
         <item name="android:colorAccent">@color/detailed_weather_accent</item>
         <item name="android:actionBarStyle">@style/DetailedWeatherActionBarStyle</item>
         <item name="android:actionBarTabBarStyle">@style/DetailedWeatherActionBarTabBarStyle</item>
         <item name="android:actionBarTabTextStyle">@style/DetailedWeatherActionBarTabTextStyle</item>
+        <item name="android:toolbarStyle">@style/DetailedWeatherToolbarStyle</item>
         <item name="dividerColor">@color/divider_color</item>
-        <item name="rippleColor">@color/ripple_color_dark</item>
+        <item name="actionBarUpdateButtonIconTint">@color/action_bar_icon_tint</item>
+        <item name="actionBarRippleColor">@color/ripple_color_dark</item>
     </style>
 
-    <style name="AppTheme.DetailedWeather" parent="AppTheme">
+    <style name="AppTheme.DarkKat.DetailedWeather">
         <item name="android:colorAccent">@color/detailed_weather_accent</item>
         <item name="android:actionBarStyle">@style/DetailedWeatherActionBarStyle</item>
         <item name="android:actionBarTabBarStyle">@style/DetailedWeatherActionBarTabBarStyle</item>
         <item name="android:actionBarTabTextStyle">@style/DetailedWeatherActionBarTabTextStyle</item>
+        <item name="android:toolbarStyle">@style/DetailedWeatherToolbarStyle</item>
         <item name="dividerColor">@color/divider_color</item>
-        <item name="rippleColor">@color/ripple_color_dark</item>
+        <item name="actionBarUpdateButtonIconTint">@color/action_bar_icon_tint</item>
+        <item name="actionBarRippleColor">@color/ripple_color_dark</item>
     </style>
 
-    <style name="AppTheme.Light.DetailedWeather" parent="AppTheme.Light">
+    <style name="AppTheme.Light.DetailedWeather">
         <item name="android:colorAccent">@color/detailed_weather_accent</item>
         <item name="android:actionBarStyle">@style/DetailedWeatherActionBarStyle</item>
         <item name="android:actionBarTabBarStyle">@style/DetailedWeatherActionBarTabBarStyle</item>
         <item name="android:actionBarTabTextStyle">@style/DetailedWeatherActionBarTabTextStyle</item>
+        <item name="android:toolbarStyle">@style/DetailedWeatherToolbarStyle</item>
         <item name="dividerColor">@color/divider_color_light</item>
-        <item name="rippleColor">@color/ripple_color_light</item>
+        <item name="actionBarUpdateButtonIconTint">@color/action_bar_icon_tint</item>
+        <item name="actionBarRippleColor">@color/ripple_color_dark</item>
     </style>
 
-    <style name="AppTheme.Blackout.DetailedWeather" parent="AppTheme.Blackout">
+    <style name="AppTheme.Blackout.DetailedWeather">
         <item name="android:actionBarStyle">@style/DetailedWeatherActionBarStyle.Blackout</item>
         <item name="android:actionBarTabBarStyle">@style/DetailedWeatherActionBarTabBarStyle</item>
         <item name="android:actionBarTabTextStyle">@style/DetailedWeatherActionBarTabTextStyle</item>
+        <item name="android:toolbarStyle">@style/DetailedWeatherToolbarStyle</item>
         <item name="dividerColor">@color/divider_color</item>
-        <item name="rippleColor">@color/ripple_color_dark</item>
+        <item name="actionBarUpdateButtonIconTint">@color/action_bar_icon_tint</item>
+        <item name="actionBarRippleColor">@color/ripple_color_dark</item>
+    </style>
+
+    <style name="AppTheme.Whiteout.DetailedWeather">
+        <item name="android:actionBarStyle">@style/DetailedWeatherActionBarStyle.Whiteout</item>
+        <item name="android:actionBarTabBarStyle">@style/DetailedWeatherActionBarTabBarStyle</item>
+        <item name="android:actionBarTabTextStyle">@style/DetailedWeatherActionBarTabTextStyle.Whiteout</item>
+        <item name="android:toolbarStyle">@style/DetailedWeatherToolbarStyle.Whiteout</item>
+        <item name="dividerColor">@color/divider_color_light</item>
+        <item name="actionBarUpdateButtonIconTint">@color/action_bar_icon_tint_whiteout</item>
+        <item name="actionBarRippleColor">@color/ripple_color_light</item>
     </style>
 </resources>

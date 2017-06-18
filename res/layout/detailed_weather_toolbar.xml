@@ -25,13 +25,13 @@
         android:id="@+id/toolbar_frame"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/theme_primary">
+        android:background="?android:attr/colorPrimary">
 
         <Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            style="@style/DetailedWeatherToolbarStyle" />
+            style="?android:attr/toolbarStyle" />
 
     </FrameLayout>
 
@@ -44,6 +44,6 @@
         android:layout_gravity="top"
         android:layout_weight="0"
         android:layout_below="@id/toolbar"
-        style="@style/DetailedWeatherActionBarTabTextStyle" />
+        style="?android:attr/actionBarTabTextStyle" />
 
 </LinearLayout>

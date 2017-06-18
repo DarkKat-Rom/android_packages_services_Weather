@@ -60,6 +60,23 @@
 	<string name="theme_material_title">Material</string>
 	<string name="theme_material_light_title">Material Light</string>
 	<string name="theme_blackout_title">Blackout</string>
+	<string name="theme_whiteout_title">Whiteout</string>
+	<string name="theme_colors_title">Theme colors</string>
+	<string name="theme_colors_default_title">Default</string>
+	<string name="theme_colors_holo_blue_title">Holo blue</string>
+	<string name="theme_colors_blue_title">Material blue</string>
+	<string name="theme_colors_red_title">Material red</string>
+	<string name="theme_colors_pink_title">Material pink</string>
+	<string name="theme_colors_purple_title">Material purple</string>
+	<string name="theme_colors_indigo_title">Material indigo</string>
+	<string name="theme_colors_cyan_title">Material cyan</string>
+	<string name="theme_colors_teal_title">Material teal</string>
+	<string name="theme_colors_green_title">Material green</string>
+	<string name="theme_colors_lime_title">Material lime</string>
+	<string name="theme_colors_yellow_title">Material yellow</string>
+	<string name="theme_colors_amber_title">Material amber</string>
+	<string name="theme_colors_orange_title">Material orange</string>
+	<string name="theme_colors_blue_grey_title">Material blue grey</string>
 
 	<string name="weather_title">Weather</string>
 	<string name="notification_title">Ongoing notification</string>

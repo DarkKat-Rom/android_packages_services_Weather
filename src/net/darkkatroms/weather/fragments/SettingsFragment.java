@@ -41,6 +41,7 @@ import net.darkkatroms.weather.R;
 import net.darkkatroms.weather.WeatherLocationTask;
 import net.darkkatroms.weather.WeatherService;
 import net.darkkatroms.weather.WeatherInfo;
+import net.darkkatroms.weather.utils.ThemeUtil;
 
 public class SettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener, WeatherLocationTask.Callback  {
@@ -49,6 +50,7 @@ public class SettingsFragment extends PreferenceFragment implements
     private SharedPreferences mPrefs;
 
     private ListPreference mTheme;
+    private ListPreference mThemeColors;
     private SwitchPreference mEnable;
     private ListPreference mUpdateInterval;
     private EditTextPreference mOWMApiKey;
@@ -69,10 +71,21 @@ public class SettingsFragment extends PreferenceFragment implements
         int intvalue;
 
         mTheme = (ListPreference) findPreference(Config.PREF_KEY_THEME);
-        intvalue = Config.getTheme(getActivity());
+        intvalue = ThemeUtil.getTheme(getActivity());
         mTheme.setValue(String.valueOf(intvalue));
         mTheme.setSummary(mTheme.getEntry());
         mTheme.setOnPreferenceChangeListener(this);
+
+        mThemeColors = (ListPreference) findPreference(Config.PREF_KEY_THEME_COLORS);
+        intvalue = ThemeUtil.getThemeColors(getActivity());
+        mThemeColors.setValue(String.valueOf(intvalue));
+        mThemeColors.setSummary(mThemeColors.getEntry());
+        if (!ThemeUtil.isBlackoutTheme(getActivity())
+                && !ThemeUtil.isWhiteoutTheme(getActivity())) {
+            mThemeColors.setOnPreferenceChangeListener(this);
+        }
+        mThemeColors.setEnabled(!ThemeUtil.isBlackoutTheme(getActivity())
+                && !ThemeUtil.isWhiteoutTheme(getActivity()));
 
         mEnable = (SwitchPreference) findPreference(Config.PREF_KEY_ENABLE);
         mEnable.setOnPreferenceChangeListener(this);
@@ -129,6 +142,12 @@ public class SettingsFragment extends PreferenceFragment implements
             intValue = Integer.valueOf((String) newValue);
             index = mTheme.findIndexOfValue((String) newValue);
             preference.setSummary(mTheme.getEntries()[index]);
+            getActivity().recreate();
+            return true;
+        } else if (preference == mThemeColors) {
+            intValue = Integer.valueOf((String) newValue);
+            index = mThemeColors.findIndexOfValue((String) newValue);
+            preference.setSummary(mThemeColors.getEntries()[index]);
             getActivity().recreate();
             return true;
         } else if (preference == mEnable) {

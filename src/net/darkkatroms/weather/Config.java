@@ -23,6 +23,7 @@ import android.preference.PreferenceManager;
 
 public class Config {
     public static final String PREF_KEY_THEME                = "theme";
+    public static final String PREF_KEY_THEME_COLORS         = "theme_colors";
     public static final String PREF_KEY_ENABLE               = "enable";
     public static final String PREF_KEY_AUTO_UPDATE          = "auto_update";
     public static final String PREF_KEY_UPDATE_INTERVAL      = "update_interval";
@@ -48,6 +49,14 @@ public class Config {
                 .getDefaultSharedPreferences(context);
 
         String valueString = prefs.getString(PREF_KEY_THEME, "0");
+        return Integer.valueOf(valueString);
+    }
+
+    public static int getThemeColors(Context context) {
+        SharedPreferences prefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        String valueString = prefs.getString(PREF_KEY_THEME_COLORS, "0");
         return Integer.valueOf(valueString);
     }
 

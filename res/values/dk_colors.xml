@@ -15,36 +15,64 @@
 -->
 <resources>
 
+    <!-- RGB based color -->
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+
+    <!-- Material based color -->
+    <color name="material_teal_500">#ff009688</color>
+    <color name="material_blue_500">#ff2196f3</color>
+    <color name="material_blue_700">#ff1976d2</color>
+    <color name="material_grey_100">#fff5f5f5</color>
+    <color name="material_grey_300">#ffe0e0e0</color>
+
     <!-- DarkKat theme base colors -->
     <color name="darkkat_blue_grey">#ff1b1f23</color>
     <color name="darkkat_blue_blue_grey">#ff1f2429</color>
 
     <!-- General theme colors -->
-    <color name="theme_primary">#ff2196f3</color>  <!-- material blue 500 -->
-    <color name="theme_primary_dark">#ff1976d2</color>  <!-- material blue 700 -->
-    <color name="theme_accent">@color/theme_primary</color>
+    <color name="theme_primary">@color/material_blue_500</color>
+    <color name="theme_primary_dark">@color/material_blue_700</color>
+    <color name="theme_accent">@color/material_blue_500</color>
 
     <!-- Blackout theme colors -->
     <color name="theme_primary_blackout">#ff101010</color>
-    <color name="theme_primary_dark_blackout">#ff000000</color>  <!-- black -->
-    <color name="theme_accent_blackout">#ffffffff</color>  <!-- white -->
+    <color name="theme_primary_dark_blackout">@color/black</color>
+    <color name="theme_accent_blackout">@color/white</color>
+
+    <!-- Whiteout theme colors -->
+    <color name="theme_primary_whiteout">@color/material_grey_100</color>
+    <color name="theme_primary_dark_whiteout">@color/material_grey_300</color>
+    <color name="theme_accent_whiteout">@color/black</color>
 
     <!-- Detailed weather colors -->
-    <color name="detailed_weather_accent">#ff009688</color>   <!-- material teal 500 -->
-    <color name="action_bar_icon_tint">#ffffffff</color>  <!-- white -->
-    <color name="actionbar_text_color">#ffffffff</color>  <!-- white -->
+
+    <!-- Accent color -->
+    <color name="detailed_weather_accent">@color/material_teal_500</color>
+
+    <!-- Action bar icon, text and ripple colors -->
+    <color name="action_bar_icon_tint">@color/white</color>
+    <color name="action_bar_icon_tint_whiteout">#8a000000</color>  <!-- 54% black -->
+    <color name="actionbar_text_color">@color/white</color>
+    <color name="actionbar_text_color_whiteout">#de000000</color>  <!-- 87% black -->
     <color name="actionbar_sub_text_color">#b3ffffff</color>  <!-- 70% white -->
+    <color name="actionbar_sub_text_color_whiteout">#8a000000</color>  <!-- 54% black -->
     <color name="actionbar_unselected_text_color">#b3ffffff</color>  <!-- 70% white -->
+    <color name="actionbar_unselected_text_color_whiteout">#8a000000</color>  <!-- 54% black -->
+
+    <!-- Action bar tab colors -->
+    <color name="tab_accent_color">@color/white</color>
+    <color name="tab_accent_color_whiteout">#8a000000</color>  <!-- 54% black -->
+    <color name="tab_selected_underline_color">@color/white</color>
+    <color name="tab_selected_underline_color_whiteout">#8a000000</color>  <!-- 54% black -->
+
+    <!-- Divider colors -->
     <color name="divider_color">#1fffffff</color>  <!-- 12% white -->
     <color name="divider_color_light">#1f000000</color>  <!-- 12% black -->
+    <!-- Detailed weather colors end -->
 
-    <!-- Detailed weather tab colors -->
-    <color name="tab_accent_color">#ffffffff</color>  <!-- white -->
-    <color name="tab_ripple_color">@color/tab_accent_color</color>
-    <color name="tab_selected_underline_color">@color/tab_accent_color</color>
-
-    <!-- Detailed weather notification colors -->
-    <color name="notification_small_icon_color">#ffffffff</color>   <!-- white -->
+    <!-- Notification colors -->
+    <color name="notification_small_icon_color">@color/white</color>   <!-- white -->
     <color name="notification_action_icon_tint">#8a000000</color>   <!-- 54% black -->
-    <color name="notification_condition_icon_tint">#ff009688</color>   <!-- material teal 500 -->
+    <color name="notification_condition_icon_tint">@color/material_teal_500</color>   <!-- material teal 500 -->
 </resources>

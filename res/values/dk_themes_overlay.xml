@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017 DarkKat
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!-- Base theme overlays -->
+    <style name="ThemeOverlay" />
+    <style name="ThemeOverlay.AppTheme" />
+    <style name="ThemeOverlay.DetailedWeather" />
+
+    <!-- Holo blue theme overlays -->
+    <style name="ThemeOverlay.AppTheme.HoloBlue">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_holo_blue</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_holo_blue</item>
+
+        <item name="android:colorAccent">@color/accent_theme_overlay_holo_blue</item>
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_holo_blue</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_holo_blue</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_holo_blue</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_holo_blue</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_holo_blue</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_holo_blue_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.HoloBlue.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_holo_blue_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.HoloBlue">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_holo_blue</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_holo_blue</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_holo_blue</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_holo_blue</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_holo_blue</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_holo_blue</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_holo_blue</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_holo_blue</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_holo_blue_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_holo_blue</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.HoloBlue.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_holo_blue_light</item>
+    </style>
+
+    <!-- Material blue theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Blue">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_blue</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_blue</item>
+
+        <item name="android:colorAccent">@color/accent_theme_overlay_blue</item>
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_blue</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_blue</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_blue</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_blue</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_blue</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_blue</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_blue</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_blue</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_blue</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_blue</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_blue</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_blue_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Blue.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_blue_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Blue">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_blue</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_blue</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_blue</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_blue</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_blue</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_blue</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_blue</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_blue</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_blue</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_blue</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_blue</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_blue</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_blue</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_blue_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_blue</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Blue.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_blue_light</item>
+    </style>
+
+    <!-- Material red theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Red">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_red</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_red</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_red</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_red</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_red</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_red</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_red</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_red</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_red</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_red</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_red</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_red</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_red</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_red_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Red.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_red_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Red">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_red</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_red</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_red</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_red</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_red</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_red</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_red</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_red</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_red</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_red</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_red</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_red</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_red</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_red_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_red</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Red.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_red_light</item>
+    </style>
+
+    <!-- Material pink theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Pink">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_pink</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_pink</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_pink</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_pink</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_pink</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_pink</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_pink</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_pink</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_pink</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_pink</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_pink</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_pink</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_pink</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_pink_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Pink.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_pink_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Pink">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_pink</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_pink</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_pink</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_pink</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_pink</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_pink</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_pink</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_pink</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_pink</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_pink</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_pink</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_pink</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_pink</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_pink_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_pink</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Pink.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_pink_light</item>
+    </style>
+
+    <!-- Material purple theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Purple">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_purple</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_purple</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_purple</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_purple</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_purple</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_purple</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_purple</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_purple</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_purple</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_purple</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_purple</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_purple</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_purple</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_purple_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Purple.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_purple_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Purple">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_purple</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_purple</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_purple</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_purple</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_purple</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_purple</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_purple</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_purple</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_purple</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_purple</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_purple</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_purple</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_purple</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_purple_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_purple</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Purple.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_purple_light</item>
+    </style>
+
+    <!-- Material indigo theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Indigo">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_indigo</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_indigo</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_indigo</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_indigo</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_indigo</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_indigo</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_indigo</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_indigo</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_indigo</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_indigo</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_indigo</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_indigo</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_indigo</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_indigo_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Indigo.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_indigo_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Indigo">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_indigo</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_indigo</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_indigo</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_indigo</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_indigo</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_indigo</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_indigo</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_indigo</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_indigo</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_indigo</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_indigo</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_indigo</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_indigo</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_indigo_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_indigo</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Indigo.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_indigo_light</item>
+    </style>
+
+    <!-- Material cyan theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Cyan">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_cyan</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_cyan</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_cyan</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_cyan</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_cyan</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_cyan</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_cyan</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_cyan</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_cyan</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_cyan</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_cyan</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_cyan</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_cyan</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_cyan_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Cyan.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_cyan_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Cyan">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_cyan</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_cyan</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_cyan</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_cyan</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_cyan</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_cyan</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_cyan</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_cyan</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_cyan</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_cyan</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_cyan</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_cyan</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_cyan</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_cyan_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_cyan</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Cyan.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_cyan_light</item>
+    </style>
+
+    <!-- Material teal theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Teal">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_teal</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_teal</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_teal</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_teal</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_teal</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_teal</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_teal</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_teal</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_teal</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_teal</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_teal</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_teal</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_teal</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_teal_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Teal.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_teal_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Teal">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_teal</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_teal</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_teal</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_teal</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_teal</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_teal</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_teal</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_teal</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_teal</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_teal</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_teal</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_teal</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_teal</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_teal_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_teal</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Teal.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_teal_light</item>
+    </style>
+
+    <!-- Material green theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Green">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_green</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_green</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_green</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_green</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_green</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_green</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_green</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_green</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_green</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_green</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_green</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_green</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_green</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_green_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Green.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_green_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Green">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_green</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_green</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_green</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_green</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_green</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_green</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_green</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_green</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_green</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_green</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_green</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_green</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_green</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_green_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_green</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Green.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_green_light</item>
+    </style>
+
+    <!-- Material lime theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Lime">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_lime</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_lime</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_lime</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_lime</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_lime</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_lime</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_lime</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_lime</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_lime</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_lime</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_lime</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_lime</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_lime</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_lime_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Lime.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_lime_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Lime">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_lime</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_lime</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_lime</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_lime</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_lime</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_lime</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_lime</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_lime</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_lime</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_lime</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_lime</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_lime</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_lime</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_lime_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_lime</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Lime.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_lime_light</item>
+    </style>
+
+    <!-- Material yellow theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Yellow">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_yellow</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_yellow</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_yellow</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_yellow</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_yellow</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_yellow</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_yellow</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_yellow</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_yellow</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_yellow</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_yellow</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_yellow</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_yellow</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_yellow_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Yellow.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_yellow_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Yellow">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_yellow</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_yellow</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_yellow</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_yellow</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_yellow</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_yellow</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_yellow</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_yellow</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_yellow</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_yellow</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_yellow</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_yellow</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_yellow</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_yellow_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_yellow</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Yellow.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_yellow_light</item>
+    </style>
+
+    <!-- Material amber theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Amber">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_amber</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_amber</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_amber</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_amber</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_amber</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_amber</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_amber</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_amber</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_amber</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_amber</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_amber</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_amber</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_amber</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_amber_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Amber.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_amber_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Amber">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_amber</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_amber</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_amber</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_amber</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_amber</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_amber</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_amber</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_amber</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_amber</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_amber</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_amber</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_amber</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_amber</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_amber_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_amber</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Amber.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_amber_light</item>
+    </style>
+
+    <!-- Material orange theme overlays -->
+    <style name="ThemeOverlay.AppTheme.Orange">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_orange</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_orange</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_orange</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_orange</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_orange</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_orange</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_orange</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_orange</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_orange</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_orange</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_orange</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_orange</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_orange</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_orange_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.Orange.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_orange_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Orange">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_orange</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_orange</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_orange</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_orange</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_orange</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_orange</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_orange</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_orange</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_orange</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_orange</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_orange</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_orange</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_orange</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_orange_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_orange</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.Orange.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_orange_light</item>
+    </style>
+
+    <!-- Material blue grey theme overlays -->
+    <style name="ThemeOverlay.AppTheme.BlueGrey">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_blue_grey</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_blue_grey</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_blue_grey</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_blue_grey</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_blue_grey</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_blue_grey</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_blue_grey</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_blue_grey_dark</item>
+
+        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.BlueGrey.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_blue_grey_light</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.BlueGrey">
+        <item name="android:colorForeground">@color/foreground_theme_overlay_blue_grey</item>
+        <item name="android:colorForegroundInverse">@color/foreground_theme_overlay_blue_grey</item>
+
+        <item name="android:textColorPrimary">@color/primary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorPrimaryInverse">@color/primary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorPrimaryDisableOnly">@color/primary_text_disable_only_theme_overlay_blue_grey</item>
+        <item name="android:textColorSecondary">@color/secondary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorSecondaryInverse">@color/secondary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorTertiary">@color/secondary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorTertiaryInverse">@color/secondary_text_theme_overlay_blue_grey</item>
+        <item name="android:textColorHint">@color/hint_foreground_theme_overlay_blue_grey</item>
+        <item name="android:textColorHintInverse">@color/hint_foreground_theme_overlay_blue_grey</item>
+        <item name="android:textColorHighlight">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorHighlightInverse">@color/highlighted_text_theme_overlay</item>
+        <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_blue_grey</item>
+
+        <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_blue_grey</item>
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_blue_grey_dark</item>
+
+        <item name="dividerColor">@color/divider_color_theme_overlay_blue_grey</item>
+    </style>
+
+    <style name="ThemeOverlay.DetailedWeather.BlueGrey.Light">
+        <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_blue_grey_light</item>
+    </style>
+</resources>

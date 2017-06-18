@@ -24,8 +24,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import net.darkkatroms.weather.Config;
 import net.darkkatroms.weather.R;
+import net.darkkatroms.weather.utils.ThemeUtil;
 
 public class ViewPagerTabStrip extends LinearLayout {
     private int mSelectedUnderlineThickness;
@@ -45,15 +45,11 @@ public class ViewPagerTabStrip extends LinearLayout {
 
         mSelectedUnderlineThickness =
                 res.getDimensionPixelSize(R.dimen.tab_selected_underline_height);
-        boolean blackoutTheme = Config.getTheme(context) == 3;
-        int backgroundColor = res.getColor(blackoutTheme
-                ? R.color.theme_primary_blackout : R.color.theme_primary);
-        int underlineColor = res.getColor(R.color.tab_selected_underline_color);
 
         mSelectedUnderlinePaint = new Paint();
-        mSelectedUnderlinePaint.setColor(underlineColor);
+        mSelectedUnderlinePaint.setColor(ThemeUtil.getTabUnderlineColor(context));
 
-        setBackgroundColor(backgroundColor);
+        setBackgroundColor(ThemeUtil.getActionBarBgColor(context));
         setWillNotDraw(false);
     }
 

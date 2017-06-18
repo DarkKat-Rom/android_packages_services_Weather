@@ -23,6 +23,12 @@
 		android:entries="@array/theme_entries"
 		android:entryValues="@array/theme_values" />
 
+	<ListPreference
+		android:key="theme_colors"
+		android:title="@string/theme_colors_title"
+		android:entries="@array/theme_colors_entries"
+		android:entryValues="@array/theme_colors_values" />
+
 	<SwitchPreference
 		android:key="enable"
 		android:title="@string/enable_title"

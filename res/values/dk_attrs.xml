@@ -16,5 +16,6 @@
 <resources>
 
     <attr name="dividerColor" format="reference" />
-    <attr name="rippleColor" format="reference" />
+    <attr name="actionBarUpdateButtonIconTint" format="reference" />
+    <attr name="actionBarRippleColor" format="reference" />
 </resources>

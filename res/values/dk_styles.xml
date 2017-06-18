@@ -15,11 +15,13 @@
 -->
 <resources>
 
+    <!-- Activity fade in/out transition -->
     <style name="FadeTransition">
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
+    <!-- Default action- and toolbar styles -->
     <style name="DetailedWeatherActionBarStyle" parent="@android:style/Widget.Material.ActionBar">
         <item name="android:background">@color/theme_primary</item>
         <item name="android:titleTextStyle">@style/DetailedWeatherActionBarTitleText</item>
@@ -36,14 +38,30 @@
         <item name="android:icon">@android:color/transparent</item>
     </style>
 
+    <style name="DetailedWeatherActionBarStyle.Whiteout" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:background">@color/theme_primary_whiteout</item>
+        <item name="android:titleTextStyle">@style/DetailedWeatherActionBarTitleText.Whiteout</item>
+        <item name="android:subtitleTextStyle">@style/DetailedWeatherActionBarSubtitleText.Whiteout</item>
+        <item name="android:backgroundStacked">@color/theme_primary_whiteout</item>
+        <item name="android:icon">@android:color/transparent</item>
+    </style>
+
     <style name="DetailedWeatherActionBarTitleText"
            parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
         <item name="android:textColor">@color/actionbar_text_color</item>
     </style>
 
+    <style name="DetailedWeatherActionBarTitleText.Whiteout">
+        <item name="android:textColor">@color/actionbar_text_color_whiteout</item>
+    </style>
+
     <style name="DetailedWeatherActionBarSubtitleText"
            parent="@android:style/TextAppearance.Material.Widget.ActionBar.Subtitle">
         <item name="android:textColor">@color/actionbar_sub_text_color</item>
+    </style>
+
+    <style name="DetailedWeatherActionBarSubtitleText.Whiteout">
+        <item name="android:textColor">@color/actionbar_sub_text_color_whiteout</item>
     </style>
 
     <style name="DetailedWeatherActionBarTabBarStyle"
@@ -56,6 +74,11 @@
         <item name="android:subtitleTextAppearance">@style/DetailedWeatherActionBarSubtitleText</item>
     </style>
 
+    <style name="DetailedWeatherToolbarStyle.Whiteout">
+        <item name="android:titleTextAppearance">@style/DetailedWeatherActionBarTitleText.Whiteout</item>
+        <item name="android:subtitleTextAppearance">@style/DetailedWeatherActionBarSubtitleText.Whiteout</item>
+    </style>
+
     <style name="DetailedWeatherActionBarTabTextStyle"
            parent="android:style/Widget.Material.ActionBar.TabText">
         <item name="android:textColor">@color/tab_text_color</item>
@@ -63,5 +86,9 @@
         <item name="android:fontFamily">@string/tab_font_family</item>
         <item name="android:elevation">0dp</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DetailedWeatherActionBarTabTextStyle.Whiteout">
+        <item name="android:textColor">@color/tab_text_color_whiteout</item>
     </style>
 </resources>

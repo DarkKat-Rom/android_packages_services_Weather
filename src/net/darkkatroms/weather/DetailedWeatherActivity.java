@@ -60,11 +60,12 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import net.darkkatroms.weather.R;
+import net.darkkatroms.weather.WeatherInfo.DayForecast;
 import net.darkkatroms.weather.actionBar.ViewPagerTabs;
 import net.darkkatroms.weather.fragments.CurrentWeatherFragment;
 import net.darkkatroms.weather.fragments.ForecastWeatherFragment;
-import net.darkkatroms.weather.R;
-import net.darkkatroms.weather.WeatherInfo.DayForecast;
+import net.darkkatroms.weather.utils.ThemeUtil;
 
 public class DetailedWeatherActivity extends Activity implements OnClickListener,
         OnLongClickListener {
@@ -133,12 +134,14 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        if (Config.getTheme(this) == 0) {
-            setTheme(R.style.AppTheme_DarkKat_DetailedWeather);
-        } else if (Config.getTheme(this) == 1) {
-            setTheme(R.style.AppTheme_DetailedWeather);
-        } else if (Config.getTheme(this) == 3) {
-            setTheme(R.style.AppTheme_Blackout_DetailedWeather);
+        if (!ThemeUtil.isThemeMaterialLight(this)) {
+            getTheme().applyStyle(ThemeUtil.getDetailedWeatherThemeResId(this), true);
+        }
+        if (!ThemeUtil.isBlackoutTheme(this)
+                && !ThemeUtil.isWhiteoutTheme(this)) {
+            if (ThemeUtil.getThemeColors(this) != ThemeUtil.THEME_COLOR_DEFAULT) {
+                getTheme().applyStyle(ThemeUtil.getDetailedWeatherThemeOverlayResId(this), true);
+            }
         }
 
         super.onCreate(savedInstanceState);
@@ -215,10 +218,9 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         mToolbar.setTitle(getResources().getString(R.string.action_bar_current_title)
                 + ", " + mWeatherInfo.getCity());
         mToolbar.setSubtitle(mToolbarSubTitles.get(0));
-        boolean blackoutTheme = Config.getTheme(this) == 3;
-        if (blackoutTheme) {
-            mToolbar.setBackgroundColor(getColor(R.color.theme_primary_blackout));
-        }
+//        if (ThemeUtil.isBlackoutTheme(this)) {
+//            mToolbar.setBackgroundColor(getColor(R.color.theme_primary_blackout));
+//        }
         setActionBar(mToolbar);
 
         mViewPagerTabs = (ViewPagerTabs) findViewById(R.id.lists_pager_header);
