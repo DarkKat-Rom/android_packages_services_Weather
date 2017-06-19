@@ -80,12 +80,10 @@ public class SettingsFragment extends PreferenceFragment implements
         intvalue = ThemeUtil.getThemeColors(getActivity());
         mThemeColors.setValue(String.valueOf(intvalue));
         mThemeColors.setSummary(mThemeColors.getEntry());
-        if (!ThemeUtil.isBlackoutTheme(getActivity())
-                && !ThemeUtil.isWhiteoutTheme(getActivity())) {
+        if (!ThemeUtil.themeColorsDisabled(getActivity())) {
             mThemeColors.setOnPreferenceChangeListener(this);
         }
-        mThemeColors.setEnabled(!ThemeUtil.isBlackoutTheme(getActivity())
-                && !ThemeUtil.isWhiteoutTheme(getActivity()));
+        mThemeColors.setEnabled(!ThemeUtil.themeColorsDisabled(getActivity()));
 
         mEnable = (SwitchPreference) findPreference(Config.PREF_KEY_ENABLE);
         mEnable.setOnPreferenceChangeListener(this);

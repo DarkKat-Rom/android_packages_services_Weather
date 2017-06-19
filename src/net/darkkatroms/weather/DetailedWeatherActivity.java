@@ -137,11 +137,8 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         if (!ThemeUtil.isThemeMaterialLight(this)) {
             getTheme().applyStyle(ThemeUtil.getDetailedWeatherThemeResId(this), true);
         }
-        if (!ThemeUtil.isBlackoutTheme(this)
-                && !ThemeUtil.isWhiteoutTheme(this)) {
-            if (ThemeUtil.getThemeColors(this) != ThemeUtil.THEME_COLOR_DEFAULT) {
-                getTheme().applyStyle(ThemeUtil.getDetailedWeatherThemeOverlayResId(this), true);
-            }
+        if (!ThemeUtil.themeColorsDisabled(this) && ThemeUtil.applyThemeColors(this)) {
+            getTheme().applyStyle(ThemeUtil.getDetailedWeatherThemeOverlayResId(this), true);
         }
 
         super.onCreate(savedInstanceState);
@@ -218,9 +215,6 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         mToolbar.setTitle(getResources().getString(R.string.action_bar_current_title)
                 + ", " + mWeatherInfo.getCity());
         mToolbar.setSubtitle(mToolbarSubTitles.get(0));
-//        if (ThemeUtil.isBlackoutTheme(this)) {
-//            mToolbar.setBackgroundColor(getColor(R.color.theme_primary_blackout));
-//        }
         setActionBar(mToolbar);
 
         mViewPagerTabs = (ViewPagerTabs) findViewById(R.id.lists_pager_header);

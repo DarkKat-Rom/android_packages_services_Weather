@@ -46,7 +46,6 @@ public class ThemeUtil {
     public static final int THEME_COLOR_ORANGE    = 13;
     public static final int THEME_COLOR_BLUE_GREY = 14;
 
-
     public static int getTheme(Context context) {
         return Config.getTheme(context);
     }
@@ -55,21 +54,20 @@ public class ThemeUtil {
         return getTheme(context) == THEME_MATERIAL_LIGHT;
     }
 
-    public static boolean isBlackoutTheme(Context context) {
-        return getTheme(context) == THEME_BLACKOUT;
-    }
-
-    public static boolean isWhiteoutTheme(Context context) {
-        return getTheme(context) == THEME_WHITEOUT;
-    }
-
     public static boolean isThemeLight(Context context) {
-        return getTheme(context) == THEME_MATERIAL_LIGHT
-                || getTheme(context) == THEME_WHITEOUT;
+        return getTheme(context) == THEME_MATERIAL_LIGHT || getTheme(context) == THEME_WHITEOUT;
+    }
+
+    public static boolean themeColorsDisabled(Context context) {
+        return getTheme(context) == THEME_WHITEOUT || getTheme(context) == THEME_BLACKOUT;
     }
 
     public static int getThemeColors(Context context) {
         return Config.getThemeColors(context);
+    }
+
+    public static boolean applyThemeColors(Context context) {
+        return getThemeColors(context) != THEME_COLOR_DEFAULT;
     }
 
     public static int getAppThemeResId(Context context) {

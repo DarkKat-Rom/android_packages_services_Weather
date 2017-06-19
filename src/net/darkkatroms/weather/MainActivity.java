@@ -36,11 +36,8 @@ public class MainActivity extends PreferenceActivity  {
         if (!ThemeUtil.isThemeMaterialLight(this)) {
             getTheme().applyStyle(ThemeUtil.getAppThemeResId(this), true);
         }
-        if (!ThemeUtil.isBlackoutTheme(this)
-                && !ThemeUtil.isWhiteoutTheme(this)) {
-            if (ThemeUtil.getThemeColors(this) != ThemeUtil.THEME_COLOR_DEFAULT) {
-                getTheme().applyStyle(ThemeUtil.getAppThemeOverlayResId(this), true);
-            }
+        if (!ThemeUtil.themeColorsDisabled(this) && ThemeUtil.applyThemeColors(this)) {
+            getTheme().applyStyle(ThemeUtil.getAppThemeOverlayResId(this), true);
         }
 
         super.onCreate(savedInstanceState);
