@@ -55,9 +55,6 @@
 	<string name="precipitation_unit_3h_title">&#160;mm/3h</string>
 
     <!-- Settings -->
-	<string name="theme_system_title">System</string>
-	<string name="theme_blackout_title">Blackout</string>
-	<string name="theme_whiteout_title">Whiteout</string>
 	<string name="theme_colors_title">Theme colors</string>
 	<string name="theme_colors_default_title">Default</string>
 	<string name="theme_colors_holo_blue_title">Holo blue</string>
