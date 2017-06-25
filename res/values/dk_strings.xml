@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2016 DarkKat
+<!-- Copyright (C) 2017 DarkKat
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -55,10 +55,7 @@
 	<string name="precipitation_unit_3h_title">&#160;mm/3h</string>
 
     <!-- Settings -->
-	<string name="theme_title">Theme</string>
-	<string name="theme_darkkat_title">Darkkat</string>
-	<string name="theme_material_title">Material</string>
-	<string name="theme_material_light_title">Material Light</string>
+	<string name="theme_system_title">System</string>
 	<string name="theme_blackout_title">Blackout</string>
 	<string name="theme_whiteout_title">Whiteout</string>
 	<string name="theme_colors_title">Theme colors</string>

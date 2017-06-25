@@ -49,7 +49,6 @@ public class SettingsFragment extends PreferenceFragment implements
 
     private SharedPreferences mPrefs;
 
-    private ListPreference mTheme;
     private ListPreference mThemeColors;
     private SwitchPreference mEnable;
     private ListPreference mUpdateInterval;
@@ -69,12 +68,6 @@ public class SettingsFragment extends PreferenceFragment implements
         mPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
 
         int intvalue;
-
-        mTheme = (ListPreference) findPreference(Config.PREF_KEY_THEME);
-        intvalue = ThemeUtil.getTheme(getActivity());
-        mTheme.setValue(String.valueOf(intvalue));
-        mTheme.setSummary(mTheme.getEntry());
-        mTheme.setOnPreferenceChangeListener(this);
 
         mThemeColors = (ListPreference) findPreference(Config.PREF_KEY_THEME_COLORS);
         intvalue = ThemeUtil.getThemeColors(getActivity());
@@ -136,13 +129,7 @@ public class SettingsFragment extends PreferenceFragment implements
         int intValue;
         int index;
 
-        if (preference == mTheme) {
-            intValue = Integer.valueOf((String) newValue);
-            index = mTheme.findIndexOfValue((String) newValue);
-            preference.setSummary(mTheme.getEntries()[index]);
-            getActivity().recreate();
-            return true;
-        } else if (preference == mThemeColors) {
+        if (preference == mThemeColors) {
             intValue = Integer.valueOf((String) newValue);
             index = mThemeColors.findIndexOfValue((String) newValue);
             preference.setSummary(mThemeColors.getEntries()[index]);

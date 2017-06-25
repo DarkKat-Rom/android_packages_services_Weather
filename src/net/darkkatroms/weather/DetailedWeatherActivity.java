@@ -134,9 +134,6 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        if (!ThemeUtil.isThemeMaterialLight(this)) {
-            getTheme().applyStyle(ThemeUtil.getDetailedWeatherThemeResId(this), true);
-        }
         if (!ThemeUtil.themeColorsDisabled(this) && ThemeUtil.applyThemeColors(this)) {
             getTheme().applyStyle(ThemeUtil.getDetailedWeatherThemeOverlayResId(this), true);
         }
@@ -185,7 +182,6 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         }
         mWeatherInfo = getWeather();
         setContentView(R.layout.detailed_weather_main);
-        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
         final FragmentManager fragmentManager = getFragmentManager();
         final FragmentTransaction transaction = fragmentManager.beginTransaction();

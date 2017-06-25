@@ -55,10 +55,7 @@
 	<string name="precipitation_unit_3h_title">&#160;mm/3h</string>
 
     <!-- Settings -->
-	<string name="theme_title">Theme</string>
-	<string name="theme_darkkat_title">Darkkat</string>
-	<string name="theme_material_title">Material</string>
-	<string name="theme_material_light_title">Material Light</string>
+	<string name="theme_system_title">System</string>
 	<string name="theme_blackout_title">Blackout</string>
 	<string name="theme_whiteout_title">Whiteout</string>
 	<string name="theme_colors_title">Theme Farben</string>

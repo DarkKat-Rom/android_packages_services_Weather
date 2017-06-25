@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2017 DarkKat
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!-- Holo blue overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_holo_blue">#ff237fa0</color>  <!-- 70% holo blue light over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_holo_blue">#ff195a72</color>  <!-- 50% holo blue light over black background -->
+
+    <!-- Material blue overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_blue">#ff1769aa</color>  <!-- 70% material blue 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_blue">#ff104b79</color>  <!-- 50% material blue 500 over black background -->
+
+    <!-- Material red overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_red">#ffab2f25</color>  <!-- 70% material red 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_red">#ff7a211b</color>  <!-- 50% material red 500 over black background -->
+
+    <!-- Material pink overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_pink">#ffa31545</color>  <!-- 70% material pink 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_pink">#ffe91e63</color>  <!-- 50% material pink 500 over black background -->
+
+    <!-- Material purple overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_purple">#ff6d1b7b</color>  <!-- 70% material purple 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_purple">#ff4e1358</color>  <!-- 50% material purple 500 over black background -->
+
+    <!-- Material indigo overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_indigo">#ff2c387f</color>  <!-- 70% material indigo 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_indigo">#ff1f285a</color>  <!-- 50% material indigo 500 over black background -->
+
+    <!-- Material cyan overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_cyan">#ff008394</color>  <!-- 70% material cyan 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_cyan">#ff005e6a</color>  <!-- 50% material cyan 500 over black background -->
+
+    <!-- Material teal overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_teal">#ff00695f</color>  <!-- 70% material teal 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_teal">#ff004b44</color>  <!-- 50% material teal 500 over black background -->
+
+    <!-- Material green overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_green">#ff357a38</color>  <!-- 70% material green 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_green">#ff265728</color>  <!-- 50% material green 500 over black background -->
+
+    <!-- Material lime overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_lime">#ff8f9a28</color>  <!-- 70% material lime 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_lime">#ff666e1c</color>  <!-- 50% material lime 500 over black background -->
+
+    <!-- Material yellow overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_yellow">#ffb3a429</color>  <!-- 70% material yellow 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_yellow">#ff80751d</color>  <!-- 50% material yellow 500 over black background -->
+
+    <!-- Material amber overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_amber">#ffb38704</color>  <!-- 70% material amber 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_amber">#ff806003</color>  <!-- 50% material amber 500 over black background -->
+
+    <!-- Material orange overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_orange">#ffb36a00</color>  <!-- 70% material orange 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_orange">#ff804c00</color>  <!-- 50% material orange 500 over black background -->
+
+    <!-- Material blue grey overlay colors -->
+    <color name="switch_thumb_normal_theme_overlay_blue_grey">#ff435761</color>  <!-- 70% material blue grey 500 over black background -->
+    <color name="switch_thumb_disabled_theme_overlay_blue_grey">#ff303e45</color>  <!-- 50% material blue grey 500 over black background -->
+</resources>

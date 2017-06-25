@@ -17,58 +17,6 @@
 -->
 <resources>
 
-    <string-array name="theme_entries" translatable="false">
-        <item>@string/theme_darkkat_title</item>
-        <item>@string/theme_material_title</item>
-        <item>@string/theme_material_light_title</item>
-        <item>@string/theme_blackout_title</item>
-        <item>@string/theme_whiteout_title</item>
-    </string-array>
-
-    <string-array name="theme_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
-    <string-array name="theme_colors_entries" translatable="false">
-        <item>@string/theme_colors_default_title</item>
-        <item>@string/theme_colors_holo_blue_title</item>
-        <item>@string/theme_colors_blue_title</item>
-        <item>@string/theme_colors_red_title</item>
-        <item>@string/theme_colors_pink_title</item>
-        <item>@string/theme_colors_purple_title</item>
-        <item>@string/theme_colors_indigo_title</item>
-        <item>@string/theme_colors_cyan_title</item>
-        <item>@string/theme_colors_teal_title</item>
-        <item>@string/theme_colors_green_title</item>
-        <item>@string/theme_colors_lime_title</item>
-        <item>@string/theme_colors_yellow_title</item>
-        <item>@string/theme_colors_amber_title</item>
-        <item>@string/theme_colors_orange_title</item>
-        <item>@string/theme_colors_blue_grey_title</item>
-    </string-array>
-
-    <string-array name="theme_colors_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-    </string-array>
-
     <string-array name="provider_entries" translatable="false">
         <item>@string/provider_openweathermap</item>
         <item>@string/provider_yahoo</item>

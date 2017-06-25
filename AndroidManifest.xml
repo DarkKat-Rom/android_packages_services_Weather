@@ -18,7 +18,7 @@
 	<application
         android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"
-        android:theme="@style/AppThemeBase"
+        android:theme="@style/AppTheme"
 		android:allowBackup="true" >
 
 		<uses-library android:name="org.apache.http.legacy" android:required="false" />
@@ -26,7 +26,7 @@
 		<activity
 			android:name=".SettingsActivity"
 			android:label="@string/weather_title"
-			android:theme="@style/AppTheme.Light"
+			android:theme="@style/AppTheme"
 			android:exported="true"
             android:taskAffinity=""
             android:excludeFromRecents="true" />
@@ -34,7 +34,7 @@
 		<activity
 			android:name=".MainActivity"
 			android:label="@string/weather_title"
-			android:theme="@style/AppTheme.Light">
+			android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -44,7 +44,7 @@
         <!-- The detailed weather activity -->
         <activity
             android:name=".DetailedWeatherActivity"
-            android:theme="@style/AppTheme.Light.DetailedWeather"
+            android:theme="@style/AppTheme.DetailedWeather"
             android:hardwareAccelerated="true"
 			android:exported="true"
             android:taskAffinity=""

@@ -33,9 +33,6 @@ public class SettingsActivity extends PreferenceActivity  {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        if (!ThemeUtil.isThemeMaterialLight(this)) {
-            getTheme().applyStyle(ThemeUtil.getAppThemeResId(this), true);
-        }
         if (!ThemeUtil.themeColorsDisabled(this) && ThemeUtil.applyThemeColors(this)) {
             getTheme().applyStyle(ThemeUtil.getAppThemeOverlayResId(this), true);
         }

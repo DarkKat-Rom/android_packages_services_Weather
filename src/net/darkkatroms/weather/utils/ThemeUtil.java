@@ -17,6 +17,7 @@
  */
 package net.darkkatroms.weather.utils;
 
+import android.app.UiModeManager;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 
@@ -24,12 +25,6 @@ import net.darkkatroms.weather.Config;
 import net.darkkatroms.weather.R;
 
 public class ThemeUtil {
-    public static final int THEME_DARKKAT        = 0;
-    public static final int THEME_MATERIAL       = 1;
-    public static final int THEME_MATERIAL_LIGHT = 2;
-    public static final int THEME_BLACKOUT       = 3;
-    public static final int THEME_WHITEOUT       = 4;
-
     public static final int THEME_COLOR_DEFAULT   = 0;
     public static final int THEME_COLOR_HOLO_BLUE = 1;
     public static final int THEME_COLOR_BLUE      = 2;
@@ -46,20 +41,11 @@ public class ThemeUtil {
     public static final int THEME_COLOR_ORANGE    = 13;
     public static final int THEME_COLOR_BLUE_GREY = 14;
 
-    public static int getTheme(Context context) {
-        return Config.getTheme(context);
-    }
-
-    public static boolean isThemeMaterialLight(Context context) {
-        return getTheme(context) == THEME_MATERIAL_LIGHT;
-    }
-
-    public static boolean isThemeLight(Context context) {
-        return getTheme(context) == THEME_MATERIAL_LIGHT || getTheme(context) == THEME_WHITEOUT;
-    }
-
     public static boolean themeColorsDisabled(Context context) {
-        return getTheme(context) == THEME_WHITEOUT || getTheme(context) == THEME_BLACKOUT;
+        final UiModeManager uiManager = (UiModeManager) context.getSystemService(
+                Context.UI_MODE_SERVICE);
+        return uiManager.getNightMode() == UiModeManager.MODE_NIGHT_NO_WHITEOUT
+                || uiManager.getNightMode() == UiModeManager.MODE_NIGHT_YES_BLACKOUT;
     }
 
     public static int getThemeColors(Context context) {
@@ -67,151 +53,53 @@ public class ThemeUtil {
     }
 
     public static boolean applyThemeColors(Context context) {
-        return getThemeColors(context) != THEME_COLOR_DEFAULT;
-    }
-
-    public static int getAppThemeResId(Context context) {
-        int themeResId = 0;
-        switch (getTheme(context)) {
-            case THEME_DARKKAT:
-                themeResId = R.style.AppTheme_DarkKat;
-                break;
-            case THEME_MATERIAL:
-                themeResId = R.style.AppTheme;
-                break;
-            case THEME_BLACKOUT:
-                themeResId = R.style.AppTheme_Blackout;
-                break;
-            case THEME_WHITEOUT:
-                themeResId = R.style.AppTheme_Whiteout;
-                break;
-            default:
-                break;
-        }
-        return themeResId;
-    }
-
-    public static int getDetailedWeatherThemeResId(Context context) {
-        int themeResId = 0;
-        switch (getTheme(context)) {
-            case THEME_DARKKAT:
-                themeResId = R.style.AppTheme_DarkKat_DetailedWeather;
-                break;
-            case THEME_MATERIAL:
-                themeResId = R.style.AppTheme_DetailedWeather;
-                break;
-            case THEME_BLACKOUT:
-                themeResId = R.style.AppTheme_Blackout_DetailedWeather;
-                break;
-            case THEME_WHITEOUT:
-                themeResId = R.style.AppTheme_Whiteout_DetailedWeather;
-                break;
-            default:
-                break;
-        }
-        return themeResId;
+        return !themeColorsDisabled(context) && getThemeColors(context) != THEME_COLOR_DEFAULT;
     }
 
     public static int getAppThemeOverlayResId(Context context) {
         int themeOverlayResId = 0;
         switch (getThemeColors(context)) {
             case THEME_COLOR_HOLO_BLUE:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_HoloBlue;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_HoloBlue_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_HoloBlue_AppTheme;
                 break;
             case THEME_COLOR_BLUE:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Blue;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Blue_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Blue_AppTheme;
                 break;
             case THEME_COLOR_RED:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Red;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Red_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Red_AppTheme;
                 break;
             case THEME_COLOR_PINK:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Pink;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Pink_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Pink_AppTheme;
                 break;
             case THEME_COLOR_PURPLE:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Purple;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Purple_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Purple_AppTheme;
                 break;
             case THEME_COLOR_INDIGO:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Indigo;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Indigo_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Indigo_AppTheme;
                 break;
             case THEME_COLOR_CYAN:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Cyan;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Cyan_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Cyan_AppTheme;
                 break;
             case THEME_COLOR_TEAL:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Teal;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Teal_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Teal_AppTheme;
                 break;
             case THEME_COLOR_GREEN:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Green;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Green_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Green_AppTheme;
                 break;
             case THEME_COLOR_LIME:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Lime;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Lime_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Lime_AppTheme;
                 break;
             case THEME_COLOR_YELLOW:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Yellow;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Yellow_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Yellow_AppTheme;
                 break;
             case THEME_COLOR_AMBER:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Amber;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Amber_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Amber_AppTheme;
                 break;
             case THEME_COLOR_ORANGE:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Orange;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_Orange_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Orange_AppTheme;
                 break;
             case THEME_COLOR_BLUE_GREY:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_BlueGrey;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_AppTheme_BlueGrey_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_BlueGrey_AppTheme;
                 break;
             default:
                 break;
@@ -223,144 +111,50 @@ public class ThemeUtil {
         int themeOverlayResId = 0;
         switch (getThemeColors(context)) {
             case THEME_COLOR_HOLO_BLUE:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_HoloBlue;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_HoloBlue_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_HoloBlue_DetailedWeather;
                 break;
             case THEME_COLOR_BLUE:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Blue;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Blue_Light;
-                }
+                    themeOverlayResId = R.style.ThemeOverlay_Blue_DetailedWeather;
                 break;
             case THEME_COLOR_RED:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Red;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Red_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Red_DetailedWeather;
                 break;
             case THEME_COLOR_PINK:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Pink;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Pink_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Pink_DetailedWeather;
                 break;
             case THEME_COLOR_PURPLE:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Purple;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Purple_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Purple_DetailedWeather;
                 break;
             case THEME_COLOR_INDIGO:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Indigo;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Indigo_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Indigo_DetailedWeather;
                 break;
             case THEME_COLOR_CYAN:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Cyan;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Cyan_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Cyan_DetailedWeather;
                 break;
             case THEME_COLOR_TEAL:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Teal;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Teal_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Teal_DetailedWeather;
                 break;
             case THEME_COLOR_GREEN:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Green;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Green_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Green_DetailedWeather;
                 break;
             case THEME_COLOR_LIME:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Lime;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Lime_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Lime_DetailedWeather;
                 break;
             case THEME_COLOR_YELLOW:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Yellow;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Yellow_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Yellow_DetailedWeather;
                 break;
             case THEME_COLOR_AMBER:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Amber;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Amber_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Amber_DetailedWeather;
                 break;
             case THEME_COLOR_ORANGE:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Orange;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_Orange_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_Orange_DetailedWeather;
                 break;
             case THEME_COLOR_BLUE_GREY:
-                if (!isThemeLight(context)) {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_BlueGrey;
-                } else {
-                    themeOverlayResId = R.style.ThemeOverlay_DetailedWeather_BlueGrey_Light;
-                }
+                themeOverlayResId = R.style.ThemeOverlay_BlueGrey_DetailedWeather;
                 break;
             default:
                 break;
         }
         return themeOverlayResId;
-    }
-
-    public static int getActionBarBgColor(Context context) {
-        int colorResId = 0;
-        switch (getTheme(context)) {
-            case THEME_DARKKAT:
-            case THEME_MATERIAL:
-            case THEME_MATERIAL_LIGHT:
-                colorResId = R.color.theme_primary;
-                break;
-            case THEME_BLACKOUT:
-                colorResId = R.color.theme_primary_blackout;
-                break;
-            case THEME_WHITEOUT:
-                colorResId = R.color.theme_primary_whiteout;
-                break;
-            default:
-                break;
-        }
-        return context.getColor(colorResId);
-    }
-
-    public static int getTabUnderlineColor(Context context) {
-        int colorResId = 0;
-        switch (getTheme(context)) {
-            case THEME_DARKKAT:
-            case THEME_MATERIAL:
-            case THEME_MATERIAL_LIGHT:
-            case THEME_BLACKOUT:
-                colorResId = R.color.tab_selected_underline_color;
-                break;
-            case THEME_WHITEOUT:
-                colorResId = R.color.tab_selected_underline_color_whiteout;
-                break;
-            default:
-                break;
-        }
-        return context.getColor(colorResId);
     }
 }

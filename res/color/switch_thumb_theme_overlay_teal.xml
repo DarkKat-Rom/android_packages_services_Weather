@@ -15,6 +15,6 @@
 -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_enabled="false" android:color="@color/switch_thumb_disabled_theme_overlay_indigo_dark" />
-    <item android:color="@color/switch_thumb_normal_theme_overlay_indigo_dark" />
+    <item android:state_enabled="false" android:color="@color/switch_thumb_disabled_theme_overlay_teal" />
+    <item android:color="@color/switch_thumb_normal_theme_overlay_teal" />
 </selector>
