@@ -15,6 +15,14 @@
 -->
 <resources>
 
+    <!-- App splash screen day/night theme -->
+    <style name="SplashTheme" parent="@android:style/Theme.Material.DayNight.NoActionBar">
+        <item name="android:colorPrimary">@color/theme_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
+        <item name="android:colorAccent">@color/theme_accent</item>
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+    </style>
+
     <!-- App day/night theme -->
     <style name="AppTheme" parent="@android:style/Theme.Material.DayNight.DarkActionBar">
         <item name="android:colorPrimary">@color/theme_primary</item>
@@ -22,8 +30,17 @@
         <item name="android:colorAccent">@color/theme_accent</item>
     </style>
 
+    <!-- Detailed weather  splash screen day/night theme -->
+    <style name="SplashTheme.DetailedWeather" parent="@android:style/Theme.Material.DayNight.NoActionBar">
+        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
+        <item name="android:colorAccent">@color/theme_accent</item>
+        <item name="android:windowBackground">@drawable/splash_bg</item>
+    </style>
+
     <!-- Detailed weather day/night theme -->
-    <style name="AppTheme.DetailedWeather">
+    <style name="AppTheme.DetailedWeather" parent="@android:style/Theme.Material.DayNight.NoActionBar">
+        <item name="android:colorPrimary">@color/theme_primary</item>
+        <item name="android:colorPrimaryDark">@color/theme_primary_dark</item>
         <item name="android:colorAccent">@color/detailed_weather_accent</item>
         <item name="android:actionBarTabBarStyle">@style/DetailedWeatherActionBarTabBarStyle</item>
         <item name="android:actionBarTabTextStyle">@style/DetailedWeatherActionBarTabTextStyle</item>
@@ -31,5 +48,6 @@
         <item name="dividerColor">@color/divider_color</item>
         <item name="actionBarUpdateButtonIconTint">@color/action_bar_icon_tint</item>
         <item name="actionBarRippleColor">@color/ripple_color</item>
+        <item name="android:windowBackground">?android:attr/colorBackground</item>
     </style>
 </resources>

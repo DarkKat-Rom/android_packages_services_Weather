@@ -24,6 +24,16 @@
 		<uses-library android:name="org.apache.http.legacy" android:required="false" />
 
 		<activity
+			android:name=".SplashActivity"
+			android:label="@string/weather_title"
+			android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+		</activity>
+
+		<activity
 			android:name=".SettingsActivity"
 			android:label="@string/weather_title"
 			android:theme="@style/AppTheme"
@@ -34,17 +44,12 @@
 		<activity
 			android:name=".MainActivity"
 			android:label="@string/weather_title"
-			android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-		</activity>
+			android:theme="@style/AppTheme" />
 
         <!-- The detailed weather activity -->
         <activity
             android:name=".DetailedWeatherActivity"
-            android:theme="@style/AppTheme.DetailedWeather"
+            android:theme="@style/SplashTheme.DetailedWeather"
             android:hardwareAccelerated="true"
 			android:exported="true"
             android:taskAffinity=""

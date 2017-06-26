@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2014 The Android Open Source Project
  *
- * Copyright (C) 2016 DarkKat
+ * Copyright (C) 2017 DarkKat
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,13 +134,7 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        if (!ThemeUtil.themeColorsDisabled(this) && ThemeUtil.applyThemeColors(this)) {
-            getTheme().applyStyle(ThemeUtil.getDetailedWeatherThemeOverlayResId(this), true);
-        }
-
         super.onCreate(savedInstanceState);
-
-        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 
         mHandler = new Handler();
         mResolver = getContentResolver();
@@ -181,6 +175,10 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
             return;
         }
         mWeatherInfo = getWeather();
+        getTheme().applyStyle(R.style.AppTheme_DetailedWeather, true);
+        if (!ThemeUtil.themeColorsDisabled(this) && ThemeUtil.applyThemeColors(this)) {
+            getTheme().applyStyle(ThemeUtil.getDetailedWeatherThemeOverlayResId(this), true);
+        }
         setContentView(R.layout.detailed_weather_main);
 
         final FragmentManager fragmentManager = getFragmentManager();
