@@ -13,11 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.darkkatroms.weather;
+package net.darkkatroms.weather.activities;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
+import net.darkkatroms.weather.R;
 import net.darkkatroms.weather.fragments.NotificationSettings;
 import net.darkkatroms.weather.fragments.SettingsFragment;
 import net.darkkatroms.weather.utils.ThemeUtil;

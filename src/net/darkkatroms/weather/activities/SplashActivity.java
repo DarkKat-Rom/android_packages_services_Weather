@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.darkkatroms.weather;
+package net.darkkatroms.weather.activities;
 
 import android.content.Intent;
 import android.os.Bundle;

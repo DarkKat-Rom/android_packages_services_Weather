@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package net.darkkatroms.weather;
+package net.darkkatroms.weather.utils;
 
 import android.app.Notification;
 import android.app.Notification.Action;
@@ -35,7 +35,12 @@ import android.util.TypedValue;
 import android.widget.RemoteViews;
 import android.widget.TextView;
 
+import net.darkkatroms.weather.Config;
+import net.darkkatroms.weather.R;
+import net.darkkatroms.weather.WeatherInfo;
 import net.darkkatroms.weather.WeatherInfo.DayForecast;
+import net.darkkatroms.weather.activities.DetailedWeatherActivity;
+import net.darkkatroms.weather.activities.SettingsActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;

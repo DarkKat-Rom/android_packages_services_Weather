@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package net.darkkatroms.weather;
+package net.darkkatroms.weather.activities;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -60,8 +60,11 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import net.darkkatroms.weather.Config;
 import net.darkkatroms.weather.R;
+import net.darkkatroms.weather.WeatherInfo;
 import net.darkkatroms.weather.WeatherInfo.DayForecast;
+import net.darkkatroms.weather.WeatherService;
 import net.darkkatroms.weather.actionBar.ViewPagerTabs;
 import net.darkkatroms.weather.fragments.CurrentWeatherFragment;
 import net.darkkatroms.weather.fragments.ForecastWeatherFragment;
