@@ -15,13 +15,7 @@
 -->
 <resources>
 
-    <!-- Actionbar style when a theme overlay was applied,
-         (change the primary text color to "actionbar_text_color",
-         otherwise the primary text color of the theme overlay will be used) -->
-    <style name="ActionBarStyle.ThemeOverlay" parent="@android:style/Widget.Material.ActionBar">
+    <style name="NavViewHeaderStyle">
         <item name="android:background">@color/theme_primary</item>
-        <item name="android:titleTextStyle">@style/DetailedWeatherActionBarTitleText</item>
-        <item name="android:backgroundStacked">@color/theme_primary</item>
-        <item name="android:icon">@android:color/transparent</item>
     </style>
 </resources>

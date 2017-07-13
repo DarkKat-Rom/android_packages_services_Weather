@@ -19,9 +19,26 @@ include $(CLEAR_VARS)
 
 LOCAL_JAVA_LIBRARIES := org.apache.http.legacy
 
-LOCAL_STATIC_JAVA_LIBRARIES := android-support-v4
+LOCAL_STATIC_JAVA_LIBRARIES := \
+    android-support-design \
+    android-support-v4 \
+    android-support-v7-appcompat \
+    android-support-v7-preference \
+    android-support-v7-recyclerview \
+    android-support-v14-preference
 
 LOCAL_SRC_FILES := $(call all-subdir-java-files)
+
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
+    frameworks/support/design/res \
+    frameworks/support/v7/appcompat/res \
+    frameworks/support/v7/preference/res \
+    frameworks/support/v7/recyclerview/res \
+    frameworks/support/v14/preference/res
+
+
+LOCAL_AAPT_FLAGS := --auto-add-overlay \
+    --extra-packages android.support.design:android.support.v7.preference:android.support.v7.recyclerview:android.support.v14.preference:android.support.v17.preference:android.support.v7.appcompat
 
 LOCAL_PACKAGE_NAME := DKWeatherService
 

@@ -56,101 +56,50 @@ public class ThemeUtil {
         return !themeColorsDisabled(context) && getThemeColors(context) != THEME_COLOR_DEFAULT;
     }
 
-    public static int getAppThemeOverlayResId(Context context) {
+    public static int getThemeOverlayResId(Context context) {
         int themeOverlayResId = 0;
         switch (getThemeColors(context)) {
             case THEME_COLOR_HOLO_BLUE:
-                themeOverlayResId = R.style.ThemeOverlay_HoloBlue_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_HoloBlue;
                 break;
             case THEME_COLOR_BLUE:
-                themeOverlayResId = R.style.ThemeOverlay_Blue_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Blue;
                 break;
             case THEME_COLOR_RED:
-                themeOverlayResId = R.style.ThemeOverlay_Red_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Red;
                 break;
             case THEME_COLOR_PINK:
-                themeOverlayResId = R.style.ThemeOverlay_Pink_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Pink;
                 break;
             case THEME_COLOR_PURPLE:
-                themeOverlayResId = R.style.ThemeOverlay_Purple_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Purple;
                 break;
             case THEME_COLOR_INDIGO:
-                themeOverlayResId = R.style.ThemeOverlay_Indigo_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Indigo;
                 break;
             case THEME_COLOR_CYAN:
-                themeOverlayResId = R.style.ThemeOverlay_Cyan_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Cyan;
                 break;
             case THEME_COLOR_TEAL:
-                themeOverlayResId = R.style.ThemeOverlay_Teal_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Teal;
                 break;
             case THEME_COLOR_GREEN:
-                themeOverlayResId = R.style.ThemeOverlay_Green_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Green;
                 break;
             case THEME_COLOR_LIME:
-                themeOverlayResId = R.style.ThemeOverlay_Lime_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Lime;
                 break;
             case THEME_COLOR_YELLOW:
-                themeOverlayResId = R.style.ThemeOverlay_Yellow_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Yellow;
                 break;
             case THEME_COLOR_AMBER:
-                themeOverlayResId = R.style.ThemeOverlay_Amber_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Amber;
                 break;
             case THEME_COLOR_ORANGE:
-                themeOverlayResId = R.style.ThemeOverlay_Orange_AppTheme;
+                themeOverlayResId = R.style.ThemeOverlay_Orange;
                 break;
             case THEME_COLOR_BLUE_GREY:
-                themeOverlayResId = R.style.ThemeOverlay_BlueGrey_AppTheme;
-                break;
-            default:
-                break;
-        }
-        return themeOverlayResId;
-    }
-
-    public static int getDetailedWeatherThemeOverlayResId(Context context) {
-        int themeOverlayResId = 0;
-        switch (getThemeColors(context)) {
-            case THEME_COLOR_HOLO_BLUE:
-                themeOverlayResId = R.style.ThemeOverlay_HoloBlue_DetailedWeather;
-                break;
-            case THEME_COLOR_BLUE:
-                    themeOverlayResId = R.style.ThemeOverlay_Blue_DetailedWeather;
-                break;
-            case THEME_COLOR_RED:
-                themeOverlayResId = R.style.ThemeOverlay_Red_DetailedWeather;
-                break;
-            case THEME_COLOR_PINK:
-                themeOverlayResId = R.style.ThemeOverlay_Pink_DetailedWeather;
-                break;
-            case THEME_COLOR_PURPLE:
-                themeOverlayResId = R.style.ThemeOverlay_Purple_DetailedWeather;
-                break;
-            case THEME_COLOR_INDIGO:
-                themeOverlayResId = R.style.ThemeOverlay_Indigo_DetailedWeather;
-                break;
-            case THEME_COLOR_CYAN:
-                themeOverlayResId = R.style.ThemeOverlay_Cyan_DetailedWeather;
-                break;
-            case THEME_COLOR_TEAL:
-                themeOverlayResId = R.style.ThemeOverlay_Teal_DetailedWeather;
-                break;
-            case THEME_COLOR_GREEN:
-                themeOverlayResId = R.style.ThemeOverlay_Green_DetailedWeather;
-                break;
-            case THEME_COLOR_LIME:
-                themeOverlayResId = R.style.ThemeOverlay_Lime_DetailedWeather;
-                break;
-            case THEME_COLOR_YELLOW:
-                themeOverlayResId = R.style.ThemeOverlay_Yellow_DetailedWeather;
-                break;
-            case THEME_COLOR_AMBER:
-                themeOverlayResId = R.style.ThemeOverlay_Amber_DetailedWeather;
-                break;
-            case THEME_COLOR_ORANGE:
-                themeOverlayResId = R.style.ThemeOverlay_Orange_DetailedWeather;
-                break;
-            case THEME_COLOR_BLUE_GREY:
-                themeOverlayResId = R.style.ThemeOverlay_BlueGrey_DetailedWeather;
+                themeOverlayResId = R.style.ThemeOverlay_BlueGrey;
                 break;
             default:
                 break;

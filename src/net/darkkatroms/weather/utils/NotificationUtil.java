@@ -39,8 +39,8 @@ import net.darkkatroms.weather.Config;
 import net.darkkatroms.weather.R;
 import net.darkkatroms.weather.WeatherInfo;
 import net.darkkatroms.weather.WeatherInfo.DayForecast;
-import net.darkkatroms.weather.activities.DetailedWeatherActivity;
-import net.darkkatroms.weather.activities.SettingsActivity;
+import net.darkkatroms.weather.activities.MainActivity;
+import net.darkkatroms.weather.activities.SplashActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -195,8 +195,9 @@ public class NotificationUtil {
 
     private PendingIntent getContentIntent(int requestCode, int day) {
         Bundle b = new Bundle();
-        b.putInt(DetailedWeatherActivity.DAY_INDEX, day);
-        Intent intent = new Intent(mContext, DetailedWeatherActivity.class);
+        b.putInt(MainActivity.KEY_DAY_INDEX, day);
+        b.putInt(MainActivity.KEY_START_FRAGMENT, MainActivity.FRAGMENT_WEATHER);
+        Intent intent = new Intent(mContext, SplashActivity.class);
         intent.putExtras(b);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(mContext, requestCode, intent,
@@ -205,8 +206,11 @@ public class NotificationUtil {
     }
 
     private Action getSettingsAction() {
+        Bundle b = new Bundle();
+        b.putInt(MainActivity.KEY_START_FRAGMENT, MainActivity.FRAGMENT_SETTINGS);
         String title = mResources.getString(R.string.action_settings_title);
-        Intent intent = new Intent(mContext, SettingsActivity.class);
+        Intent intent = new Intent(mContext, SplashActivity.class);
+        intent.putExtras(b);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 6, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);

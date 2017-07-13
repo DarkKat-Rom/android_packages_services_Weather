@@ -13,20 +13,12 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/update_button_layout"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:background="@drawable/action_bar_update_button_bg">
-
-    <ImageView
-        android:id="@+id/update_button"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center_vertical"
-        android:tint="?attr/actionBarUpdateButtonIconTint"
-        android:src="@drawable/ic_menu_update"
-        android:scaleType="centerInside" />
-
-</LinearLayout>
+    <item type="id" name="menu_item_weather_today" />
+    <item type="id" name="menu_item_weather_forecast_1" />
+    <item type="id" name="menu_item_weather_forecast_2" />
+    <item type="id" name="menu_item_weather_forecast_3" />
+    <item type="id" name="menu_item_weather_forecast_4" />
+    <item type="id" name="menu_item_settings" />
+</resources>

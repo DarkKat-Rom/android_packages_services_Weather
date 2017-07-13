@@ -76,7 +76,6 @@ public class CurrentWeatherFragment extends Fragment {
     private TextView mExpandCollapseButtonText;
     private ImageView mExpandCollapseButtonIcon;
 
-    private String mForecastDay;
     private ArrayList<ViewHolder> mHolders = new ArrayList<ViewHolder>();
 
     private ValueAnimator mAnimator;
@@ -196,8 +195,8 @@ public class CurrentWeatherFragment extends Fragment {
             mPressureValue.setText(mWeatherInfo.getFormattedPressure());
             mSunsetValue.setText(mWeatherInfo.getSunset());
 
-            if (mCardsLayout != null && mForecastDay != null) {
-                ArrayList<HourForecast> hourForecasts = mWeatherInfo.getHourForecastsDay(mForecastDay);
+            if (mCardsLayout != null) {
+                ArrayList<HourForecast> hourForecasts = mWeatherInfo.getHourForecastsDay(getForecastDay());
                 if (hourForecasts.size() != 0) {
                     for (int i = 0; i < hourForecasts.size(); i++) {
                         HourForecast h = hourForecasts.get(i);
@@ -214,8 +213,8 @@ public class CurrentWeatherFragment extends Fragment {
         return layout;
     }
 
-    public void setForecastDay(String forecastDay) {
-        mForecastDay = forecastDay;
+    private String getForecastDay() {
+        return mWeatherInfo.getHourForecastDays().get(0);
     }
 
     public void updateWeather(WeatherInfo weather) {
@@ -247,8 +246,8 @@ public class CurrentWeatherFragment extends Fragment {
         mPressureValue.setText(mWeatherInfo.getFormattedPressure());
         mSunsetValue.setText(mWeatherInfo.getSunset());
 
-        if (mCardsLayout != null && mForecastDay != null) {
-            ArrayList<HourForecast> hourForecasts = mWeatherInfo.getHourForecastsDay(mForecastDay);
+        if (mCardsLayout != null) {
+            ArrayList<HourForecast> hourForecasts = mWeatherInfo.getHourForecastsDay(getForecastDay());
             if (hourForecasts.size() != 0) {
                 if (mHolders.size() != hourForecasts.size()) {
                     if (mCardsLayout.getChildCount() > 1) {
@@ -321,6 +320,9 @@ public class CurrentWeatherFragment extends Fragment {
     }
 
     private void setPrecipitation(WeatherInfo w) {
+        if (getActivity() == null) {
+            return;
+        }
         final String rain1H = w.getFormattedRain1H();
         final String rain3H = w.getFormattedRain3H();
         final String snow1H = w.getFormattedSnow1H();
@@ -471,6 +473,9 @@ public class CurrentWeatherFragment extends Fragment {
         }
 
         public void updateWeather(HourForecast h) {
+            if (getActivity() == null || mWeatherInfo == null) {
+                return;
+            }
             final Drawable icon = mWeatherInfo.getConditionIcon(0, h.getConditionCode());
             final String rain = h.getFormattedRain();
             final String snow = h.getFormattedSnow();

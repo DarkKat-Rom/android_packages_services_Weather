@@ -15,33 +15,27 @@
 -->
 <resources>
 
+    <style name="NavViewHeaderStyle">
+        <item name="android:background">@drawable/nav_view_header_background</item>
+    </style>
+
+    <style name="NavViewHeaderImageStyle">
+        <item name="android:src">@drawable/weather_na</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:background">@drawable/nav_view_header_icon_background</item>
+    </style>
+
     <!-- Default action- and toolbar styles -->
-    <style name="DetailedWeatherActionBarTitleText"
-           parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
-        <item name="android:textColor">@color/actionbar_text_color</item>
+    <style name="ToolbarStyle" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="titleTextAppearance">@style/ToolbarTitleText</item>
+        <item name="subtitleTextAppearance">@style/ToolbarSubtitleText</item>
     </style>
 
-    <style name="DetailedWeatherActionBarSubtitleText"
-           parent="@android:style/TextAppearance.Material.Widget.ActionBar.Subtitle">
-        <item name="android:textColor">@color/actionbar_sub_text_color</item>
+    <style name="ToolbarTitleText" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/toolbar_text_color</item>
     </style>
 
-    <style name="DetailedWeatherActionBarTabBarStyle"
-           parent="@android:style/Widget.Material.ActionBar.TabBar">
-        <item name="android:showDividers">none</item>
-    </style>
-
-    <style name="DetailedWeatherToolbarStyle" parent="@android:style/Widget.Material.Toolbar">
-        <item name="android:titleTextAppearance">@style/DetailedWeatherActionBarTitleText</item>
-        <item name="android:subtitleTextAppearance">@style/DetailedWeatherActionBarSubtitleText</item>
-    </style>
-
-    <style name="DetailedWeatherActionBarTabTextStyle"
-           parent="android:style/Widget.Material.ActionBar.TabText">
-        <item name="android:textColor">@color/tab_text_color</item>
-        <item name="android:textSize">@dimen/tab_text_size</item>
-        <item name="android:fontFamily">@string/tab_font_family</item>
-        <item name="android:elevation">0dp</item>
-        <item name="android:textStyle">bold</item>
+    <style name="ToolbarSubtitleText" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/toolbar_sub_text_color</item>
     </style>
 </resources>

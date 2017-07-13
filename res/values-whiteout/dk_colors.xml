@@ -16,23 +16,17 @@
 <resources>
 
     <!-- Day (Whiteout) theme colors -->
+
+    <!-- Theme colors -->
     <color name="theme_primary">@color/material_grey_100</color>
     <color name="theme_primary_dark">@color/material_grey_300</color>
     <color name="theme_accent">@color/black</color>
 
-    <!-- Detailed weather colors -->
+    <!-- Navigation view colors -->
+    <color name="nav_view_header_icon_bg_color">@color/theme_primary_dark</color>
 
-    <!-- Accent color -->
-    <color name="detailed_weather_accent">@color/theme_accent</color>
-
-    <!-- Action bar icon, text and ripple colors -->
-    <color name="action_bar_icon_tint">#8a000000</color>  <!-- 54% black -->
-    <color name="actionbar_text_color">#de000000</color>  <!-- 87% black -->
-    <color name="actionbar_sub_text_color">#8a000000</color>  <!-- 54% black -->
-    <color name="actionbar_unselected_text_color">#8a000000</color>  <!-- 54% black -->
-
-    <!-- Action bar tab colors -->
-    <color name="tab_accent_color">#8a000000</color>  <!-- 54% black -->
-    <color name="tab_selected_underline_color">#8a000000</color>  <!-- 54% black -->
-    <!-- Detailed weather colors end -->
+    <!-- Toolbar icon and text colors -->
+    <color name="toolbar_icon_tint">#8a000000</color>  <!-- 54% black -->
+    <color name="toolbar_text_color">#de000000</color>  <!-- 87% black -->
+    <color name="toolbar_sub_text_color">#8a000000</color>  <!-- 54% black -->
 </resources>

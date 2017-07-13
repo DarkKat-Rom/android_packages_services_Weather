@@ -37,6 +37,7 @@ import net.darkkatroms.weather.Config;
 import net.darkkatroms.weather.R;
 import net.darkkatroms.weather.WeatherInfo;
 import net.darkkatroms.weather.WeatherInfo.HourForecast;
+import net.darkkatroms.weather.activities.MainActivity;
 
 import java.util.ArrayList;
 
@@ -105,6 +106,10 @@ public class ForecastWeatherFragment extends Fragment {
                 }
             }
         });
+
+        if (savedInstanceState != null) {
+            mForecastDay = savedInstanceState.getString(MainActivity.KEY_DAY_INDEX);
+        }
 
         if (mWeatherInfo != null && mCardsLayout != null && mForecastDay != null) {
             ArrayList<HourForecast> hourForecasts = mWeatherInfo.getHourForecastsDay(mForecastDay);
@@ -321,6 +326,9 @@ public class ForecastWeatherFragment extends Fragment {
         }
 
         public void updateWeather(HourForecast h) {
+            if (getActivity() == null || mWeatherInfo == null) {
+                return;
+            }
             final Drawable icon = mWeatherInfo.getConditionIcon(0, h.getConditionCode());
             final String rain = h.getFormattedRain();
             final String snow = h.getFormattedSnow();
@@ -342,5 +350,11 @@ public class ForecastWeatherFragment extends Fragment {
             humidityValue.setText(h.getFormattedHumidity());
             pressureValue.setText(h.getFormattedPressure());
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString(MainActivity.KEY_DAY_INDEX, mForecastDay);
+        super.onSaveInstanceState(outState);
     }
 }

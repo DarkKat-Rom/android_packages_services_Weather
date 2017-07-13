@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2015 The Android Open Source Project
+<!-- Copyright (C) 2017 DarkKat
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,8 +13,17 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<resources>
 
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:alpha="@dimen/highlight_alpha"
-          android:color="@color/foreground_theme_overlay_amber" />
-</selector>
+    <style name="NavViewHeaderStyle">
+        <item name="android:background">@color/theme_primary</item>
+    </style>
+
+    <style name="NavViewHeaderImageStyle">
+        <item name="android:src">@drawable/weather_na</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:tint">#8a000000</item>
+        <item name="android:tintMode">multiply</item>
+        <item name="android:background">@drawable/nav_view_header_icon_background</item>
+    </style>
+</resources>

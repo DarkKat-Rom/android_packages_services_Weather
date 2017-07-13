@@ -22,19 +22,19 @@
         android:id="@+id/current_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="@dimen/current_card_margin_start_end"
+        android:layout_marginTop="@dimen/current_card_margin_top_bottom"
+        android:layout_marginEnd="@dimen/current_card_margin_start_end"
+        android:layout_marginBottom="@dimen/current_card_margin_top_bottom"
         android:background="@drawable/card_background"
         android:backgroundTint="?android:attr/colorBackgroundFloating"
-        android:elevation="2dp"
+        android:elevation="@dimen/current_card_elevation"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
+            android:padding="@dimen/current_card_update_time_layout_padding"
             android:orientation="vertical">
 
             <TextView
@@ -49,7 +49,7 @@
                 android:id="@+id/current_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="@dimen/current_card_update_time_text_margin_top"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="?android:attr/textColorSecondary" />
 
@@ -58,14 +58,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
+            android:paddingStart="@dimen/current_card_condition_temp_layout_padding_start_end"
+            android:paddingEnd="@dimen/current_card_condition_temp_layout_padding_start_end"
             android:gravity="center_vertical">
 
             <ImageView
                 android:id="@+id/current_condition_image"
-                android:layout_width="72dp"
-                android:layout_height="72dp"
+                android:layout_width="@dimen/current_card_condition_image_size"
+                android:layout_height="@dimen/current_card_condition_image_size"
                 android:src="@android:drawable/ic_dialog_alert"
                 android:tint="?android:attr/colorControlNormal"
                 android:tintMode="multiply"
@@ -73,10 +73,10 @@
 
             <View
                 android:id="@+id/current_image_divider"
-                android:layout_width="1dp"
+                android:layout_width="@dimen/current_card_condition_image_divider_width"
                 android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginStart="@dimen/current_card_condition_image_divider_margin_start_end"
+                android:layout_marginEnd="@dimen/current_card_condition_image_divider_margin_start_end"
                 android:background="?attr/dividerColor" />
 
             <LinearLayout
@@ -94,9 +94,9 @@
                 <View
                     android:id="@+id/current_temp_divider"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_height="@dimen/current_card_condition_temp_divider_height"
+                    android:layout_marginTop="@dimen/current_card_condition_temp_divider_margin_top_bottom"
+                    android:layout_marginBottom="@dimen/current_card_condition_temp_divider_margin_top_bottom"
                     android:background="?attr/dividerColor" />
 
                 <TextView
@@ -109,8 +109,8 @@
             </LinearLayout>
 
             <Space
-                android:layout_width="0dp"
-                android:layout_height="1dp"
+                android:layout_width="@dimen/current_card_condition_temp_space_width"
+                android:layout_height="@dimen/current_card_condition_temp_space_height"
                 android:layout_weight="1" />
 
             <TextView
@@ -127,13 +127,13 @@
             android:id="@+id/current_temps_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingTop="16dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="8dp">
+            android:paddingStart="@dimen/current_card_day_temps_layout_margin_start_end"
+            android:paddingTop="@dimen/current_card_day_temps_layout_margin_top"
+            android:paddingEnd="@dimen/current_card_day_temps_layout_margin_start_end"
+            android:paddingBottom="@dimen/current_card_day_temps_layout_margin_bottom">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/current_card_day_temps_temps_layout_width"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
@@ -157,9 +157,9 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/current_card_day_temps_temps_layout_width"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="@dimen/current_card_day_temps_day_layout_margin_start"
                 android:layout_weight="1"
                 android:gravity="left"
                 android:orientation="vertical">
@@ -182,7 +182,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/current_card_day_temps_temps_layout_width"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
@@ -206,7 +206,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/current_card_day_temps_temps_layout_width"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
@@ -228,20 +228,19 @@
                     android:textColor="?android:attr/textColorSecondary" />
 
             </LinearLayout>
-
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/current_expanded_content_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="16dp"
-            android:paddingBottom="8dp">
+            android:paddingStart="@dimen/current_card_expanded_content_layout_padding_start_end"
+            android:paddingTop="@dimen/current_card_expanded_content_layout_padding_top_bottom"
+            android:paddingEnd="@dimen/current_card_expanded_content_layout_padding_start_end"
+            android:paddingBottom="@dimen/current_card_expanded_content_layout_padding_top_bottom">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/current_card_expanded_content_inner_layout_width"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
@@ -264,8 +263,8 @@
                     android:textColor="?android:attr/textColorSecondary" />
 
                 <Space
-                    android:layout_width="1dp"
-                    android:layout_height="4dp" />
+                    android:layout_width="@dimen/current_card_expanded_content_space_width"
+                    android:layout_height="@dimen/current_card_expanded_content_space_height" />
 
                 <TextView
                     android:id="@+id/current_wind_title"
@@ -283,8 +282,8 @@
                     android:textColor="?android:attr/textColorSecondary" />
 
                 <Space
-                    android:layout_width="1dp"
-                    android:layout_height="4dp" />
+                    android:layout_width="@dimen/current_card_expanded_content_space_width"
+                    android:layout_height="@dimen/current_card_expanded_content_space_height" />
 
                 <TextView
                     android:id="@+id/current_sunrise_title"
@@ -304,7 +303,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="@dimen/current_card_expanded_content_inner_layout_width"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
@@ -326,8 +325,8 @@
                     android:textColor="?android:attr/textColorSecondary" />
 
                 <Space
-                    android:layout_width="1dp"
-                    android:layout_height="4dp" />
+                    android:layout_width="@dimen/current_card_expanded_content_space_width"
+                    android:layout_height="@dimen/current_card_expanded_content_space_height" />
 
                 <TextView
                     android:id="@+id/current_pressure_title"
@@ -345,8 +344,8 @@
                     android:textColor="?android:attr/textColorSecondary" />
 
                 <Space
-                    android:layout_width="1dp"
-                    android:layout_height="4dp" />
+                    android:layout_width="@dimen/current_card_expanded_content_space_width"
+                    android:layout_height="@dimen/current_card_expanded_content_space_height" />
 
                 <TextView
                     android:id="@+id/current_sunset_title"
@@ -364,13 +363,12 @@
                     android:textColor="?android:attr/textColorSecondary" />
 
             </LinearLayout>
-
         </LinearLayout>
 
         <View
             android:id="@+id/current_expand_collapse_button_divider"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="@dimen/current_card_expanded_content_expand_collapse_button_divider_height"
             android:background="?attr/dividerColor"
             android:alpha="0"
             android:visibility="gone" />
@@ -378,15 +376,15 @@
         <LinearLayout
             android:id="@+id/current_bottom_bar"
             android:layout_width="match_parent"
-            android:layout_height="48dp">
+            android:layout_height="@dimen/current_card_expanded_content_bottom_bar_height">
 
             <TextView
                 android:id="@+id/current_provider_link"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:paddingStart="@dimen/current_card_expanded_content_bottom_bar_provider_link_padding_start_end"
+                android:paddingEnd="@dimen/current_card_expanded_content_bottom_bar_provider_link_padding_start_end"
                 android:text="@string/provider_openweathermap"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="?android:attr/colorAccent"
@@ -394,16 +392,16 @@
                 android:background="@drawable/ripple_drawable_rectangle" />
 
             <Space
-                android:layout_width="0dp"
-                android:layout_height="1dp"
+                android:layout_width="@dimen/current_card_expanded_content_bottom_bar_provider_link_space_width"
+                android:layout_height="@dimen/current_card_expanded_content_bottom_bar_provider_link_space_height"
                 android:layout_weight="0.5" />
 
             <LinearLayout
                 android:id="@+id/current_expand_collapse_button"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
+                android:paddingStart="@dimen/current_card_expanded_content_expand_collapse_button_padding_start_end"
+                android:paddingEnd="@dimen/current_card_expanded_content_expand_collapse_button_padding_start_end"
                 android:layout_gravity="right"
                 android:gravity="center_vertical"
                 android:clickable="true"
@@ -413,17 +411,17 @@
                     android:id="@+id/current_expand_collapse_button_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:paddingStart="8dp"
+                    android:layout_marginEnd="@dimen/current_card_expanded_content_bottom_bar_expand_collapse_button_text_margin_end"
+                    android:paddingStart="@dimen/current_card_expanded_content_bottom_bar_expand_collapse_button_text_padding_start"
                     android:text="@string/expand_card"
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textColor="?android:attr/textColorPrimary" />
 
                 <ImageView
                     android:id="@+id/current_expand_collapse_button_icon"
-                    android:layout_width="32dp"
-                    android:layout_height="24dp"
-                    android:paddingEnd="8dp"
+                    android:layout_width="@dimen/current_card_expanded_content_bottom_bar_expand_collapse_button_icon_width"
+                    android:layout_height="@dimen/current_card_expanded_content_bottom_bar_expand_collapse_button_icon_height"
+                    android:paddingEnd="@dimen/current_card_expanded_content_bottom_bar_expand_collapse_button_icon_padding_end"
                     android:src="@drawable/ic_expand_more"
                     android:tint="?android:attr/colorControlNormal"
                     android:tintMode="multiply"

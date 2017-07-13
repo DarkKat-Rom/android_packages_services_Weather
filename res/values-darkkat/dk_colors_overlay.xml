@@ -15,6 +15,10 @@
 -->
 <resources>
 
+    <!-- General overlay color
+         (fall back to the default day/night theme accent color) -->
+    <color name="accent_theme_overlay_fallback">@color/material_teal_500</color>
+
     <!-- Holo blue overlay colors -->
     <color name="switch_thumb_normal_theme_overlay_holo_blue">#ff237fa0</color>  <!-- 70% holo blue light over black background -->
     <color name="switch_thumb_disabled_theme_overlay_holo_blue">#ff195a72</color>  <!-- 50% holo blue light over black background -->

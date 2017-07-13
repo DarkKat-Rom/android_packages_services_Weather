@@ -14,7 +14,6 @@
      limitations under the License.
 -->
 
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:alpha="@dimen/highlight_alpha"
-          android:color="@color/foreground_theme_overlay_green" />
-</selector>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+        android:color="?attr/toolbarRippleColor"
+        android:radius="20dp" />

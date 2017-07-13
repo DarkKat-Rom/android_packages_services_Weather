@@ -37,11 +37,16 @@
     <item name="hint_alpha" format="float" type="dimen">0.50</item>
     <item name="hint_pressed_alpha" format="float" type="dimen">0.70</item>
 
+    <!-- General overlay color
+         (fall back to the default day/night theme accent color) -->
+    <color name="accent_theme_overlay_fallback">@color/material_teal_500</color>
+
     <!-- Holo blue overlay colors -->
     <color name="foreground_theme_overlay_holo_blue">@color/holo_blue_light</color>
-    <color name="accent_theme_overlay_holo_blue">@color/material_teal_500</color>
+    <color name="accent_theme_overlay_holo_blue">@color/accent_theme_overlay_fallback</color>
     <color name="primary_text_default_theme_overlay_holo_blue">@color/holo_blue_light</color>
     <color name="secondary_text_default_theme_overlay_holo_blue">#b333b5e5</color> <!-- 70% holo blue light -->
+    <color name="ripple_color_theme_overlay_holo_blue">#4033b5e5</color> <!-- 26% holo blue light -->
 
     <color name="switch_thumb_normal_theme_overlay_holo_blue">#ff6fcbec</color>  <!-- 70% holo blue light over white background -->
     <color name="switch_thumb_disabled_theme_overlay_holo_blue">#ff98d9f1</color>  <!-- 50% holo blue light over white background -->
@@ -50,9 +55,10 @@
 
     <!-- Material blue overlay colors -->
     <color name="foreground_theme_overlay_blue">@color/material_blue_500</color>
-    <color name="accent_theme_overlay_blue">@color/material_teal_500</color>
+    <color name="accent_theme_overlay_blue">@color/accent_theme_overlay_fallback</color>
     <color name="primary_text_default_theme_overlay_blue">@color/material_blue_500</color>
     <color name="secondary_text_default_theme_overlay_blue">#b32196f3</color> <!-- 70% material blue 500 -->
+    <color name="ripple_color_theme_overlay_blue">#402196f3</color> <!-- 26% material blue 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_blue">#ff63b5f6</color>  <!-- 70% material blue 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_blue">#ff98d9f1</color>  <!-- 50% material blue 500 over white background -->
@@ -63,6 +69,7 @@
     <color name="foreground_theme_overlay_red">@color/material_red_500</color>
     <color name="primary_text_default_theme_overlay_red">@color/material_red_500</color>
     <color name="secondary_text_default_theme_overlay_red">#b3f44336</color> <!-- 70% material red 500 -->
+    <color name="ripple_color_theme_overlay_red">#40f44336</color> <!-- 26% material red 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_red">#fff77b71</color>  <!-- 70% material red 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_red">#fff9a09a</color>  <!-- 50% material red 500 over white background -->
@@ -73,6 +80,7 @@
     <color name="foreground_theme_overlay_pink">@color/material_pink_500</color>
     <color name="primary_text_default_theme_overlay_pink">@color/material_pink_500</color>
     <color name="secondary_text_default_theme_overlay_pink">#b3e91e63</color> <!-- 70% material pink 500 -->
+    <color name="ripple_color_theme_overlay_pink">#40e91e63</color> <!-- 26% material pink 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_pink">#ffef6191</color>  <!-- 70% material pink 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_pink">#fff38eb0</color>  <!-- 50% material pink 500 over white background -->
@@ -83,6 +91,7 @@
     <color name="foreground_theme_overlay_purple">@color/material_purple_500</color>
     <color name="primary_text_default_theme_overlay_purple">@color/material_purple_500</color>
     <color name="secondary_text_default_theme_overlay_purple">#b39c27b0</color> <!-- 70% material purple 500 -->
+    <color name="ripple_color_theme_overlay_purple">#409c27b0</color> <!-- 26% material purple 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_purple">#ffb967c7</color>  <!-- 70% material purple 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_purple">#ffcd92d7</color>  <!-- 50% material purple 500 over white background -->
@@ -93,6 +102,7 @@
     <color name="foreground_theme_overlay_indigo">@color/material_indigo_500</color>
     <color name="primary_text_default_theme_overlay_indigo">@color/material_indigo_500</color>
     <color name="secondary_text_default_theme_overlay_indigo">#b33f51b5</color> <!-- 70% material indigo 500 -->
+    <color name="ripple_color_theme_overlay_indigo">#403f51b5</color> <!-- 26% material indigo 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_indigo">#ff7884cb</color>  <!-- 70% material indigo 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_indigo">#ff9ea7d9</color>  <!-- 50% material indigo 500 over white background -->
@@ -103,6 +113,7 @@
     <color name="foreground_theme_overlay_cyan">@color/material_cyan_500</color>
     <color name="primary_text_default_theme_overlay_cyan">@color/material_cyan_500</color>
     <color name="secondary_text_default_theme_overlay_cyan">#b300bcd4</color> <!-- 70% material cyan 500 -->
+    <color name="ripple_color_theme_overlay_cyan">#4000bcd4</color> <!-- 26% material cyan 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_cyan">#ff4ccfe0</color>  <!-- 70% material cyan 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_cyan">#ff7fdde9</color>  <!-- 50% material cyan 500 over white background -->
@@ -113,6 +124,7 @@
     <color name="foreground_theme_overlay_teal">@color/material_teal_500</color>
     <color name="primary_text_default_theme_overlay_teal">@color/material_teal_500</color>
     <color name="secondary_text_default_theme_overlay_teal">#b3009688</color> <!-- 70% material teal 500 -->
+    <color name="ripple_color_theme_overlay_teal">#40009688</color> <!-- 26% material teal 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_teal">#ff4cb5ab</color>  <!-- 70% material teal 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_teal">#ff7fcac3</color>  <!-- 50% material teal 500 over white background -->
@@ -123,6 +135,7 @@
     <color name="foreground_theme_overlay_green">@color/material_green_500</color>
     <color name="primary_text_default_theme_overlay_green">@color/material_green_500</color>
     <color name="secondary_text_default_theme_overlay_green">#b34caf50</color> <!-- 70% material green 500 -->
+    <color name="ripple_color_theme_overlay_green">#404caf50</color> <!-- 26% material green 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_green">#ff81c684</color>  <!-- 70% material green 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_green">#ffa5d6a7</color>  <!-- 50% material green 500 over white background -->
@@ -133,6 +146,7 @@
     <color name="foreground_theme_overlay_lime">@color/material_lime_500</color>
     <color name="primary_text_default_theme_overlay_lime">@color/material_lime_500</color>
     <color name="secondary_text_default_theme_overlay_lime">#b3cddc39</color> <!-- 70% material lime 500 -->
+    <color name="ripple_color_theme_overlay_lime">#40cddc39</color> <!-- 26% material lime 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_lime">#ffdbe674</color>  <!-- 70% material lime 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_lime">#ffe5ed9b</color>  <!-- 50% material lime 500 over white background -->
@@ -143,6 +157,7 @@
     <color name="foreground_theme_overlay_yellow">@color/material_yellow_500</color>
     <color name="primary_text_default_theme_overlay_yellow">@color/material_yellow_500</color>
     <color name="secondary_text_default_theme_overlay_yellow">#b3ffeb3b</color> <!-- 70% material yellow 500 -->
+    <color name="ripple_color_theme_overlay_yellow">#40ffeb3b</color> <!-- 26% material yellow 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_yellow">#fffff075</color>  <!-- 70% material yellow 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_yellow">#fffff49c</color>  <!-- 50% material yellow 500 over white background -->
@@ -153,6 +168,7 @@
     <color name="foreground_theme_overlay_amber">@color/material_amber_500</color>
     <color name="primary_text_default_theme_overlay_amber">@color/material_amber_500</color>
     <color name="secondary_text_default_theme_overlay_amber">#b3ffc107</color> <!-- 70% material amber 500 -->
+    <color name="ripple_color_theme_overlay_amber">#40ffc107</color> <!-- 26% material amber 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_amber">#ffffd350</color>  <!-- 70% material amber 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_amber">#ffffdf82</color>  <!-- 50% material amber 500 over white background -->
@@ -163,6 +179,7 @@
     <color name="foreground_theme_overlay_orange">@color/material_orange_500</color>
     <color name="primary_text_default_theme_overlay_orange">@color/material_orange_500</color>
     <color name="secondary_text_default_theme_overlay_orange">#b3ff9800</color> <!-- 70% material orange 500 -->
+    <color name="ripple_color_theme_overlay_orange">#40ff9800</color> <!-- 26% material orange 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_orange">#ffffb64c</color>  <!-- 70% material orange 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_orange">#ffff9800</color>  <!-- 50% material orange 500 over white background -->
@@ -173,6 +190,7 @@
     <color name="foreground_theme_overlay_blue_grey">@color/material_blue_grey_500</color>
     <color name="primary_text_default_theme_overlay_blue_grey">@color/material_blue_grey_500</color>
     <color name="secondary_text_default_theme_overlay_blue_grey">#b3607d8b</color> <!-- 70% material blue grey 500 -->
+    <color name="ripple_color_theme_overlay_blue_grey">#40607d8b</color> <!-- 26% material blue grey 500 -->
 
     <color name="switch_thumb_normal_theme_overlay_blue_grey">#ff8fa3ad</color>  <!-- 70% material blue grey 500 over white background -->
     <color name="switch_thumb_disabled_theme_overlay_blue_grey">#ffafbdc4</color>  <!-- 50% material blue grey 500 over white background -->

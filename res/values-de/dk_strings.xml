@@ -18,8 +18,13 @@
     <!-- General -->
 	<string name="app_name">DK Wetter Dienst</string>
 
-    <!-- Action bar -->
-	<string name="action_bar_current_title">Wetter</string>
+	<string name="menu_item_weather_today_title">Heute</string>
+	<string name="menu_item_weather_forecast_1_title">Vorhersage 1</string>
+	<string name="menu_item_weather_forecast_2_title">Vorhersage 2</string>
+	<string name="menu_item_weather_forecast_3_title">Vorhersage 3</string>
+	<string name="menu_item_weather_forecast_4_title">Vorhersage 4</string>
+
+    <!-- Toolbar -->
 	<string name="today_title">Heute</string>
 	<string name="update_weather">Wetter aktuallisieren</string>
 	<string name="weather_updated">Wetterdaten wurden aktuallisiert</string>

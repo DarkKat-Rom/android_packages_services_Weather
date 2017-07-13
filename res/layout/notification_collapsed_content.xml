@@ -21,7 +21,7 @@
     <ImageView
         android:id="@+id/content_image"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/notification_collapsed_content_image_height"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:scaleType="centerInside" />
@@ -47,7 +47,7 @@
             android:id="@+id/content_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0.5dp"
+            android:layout_marginTop="@dimen/notification_collapsed_content_text_margin_top"
             android:textAppearance="@android:style/TextAppearance.Material.Notification"
             android:singleLine="true"
             android:ellipsize="marquee"

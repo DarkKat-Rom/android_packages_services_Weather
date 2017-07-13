@@ -39,14 +39,9 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_holo_blue</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_holo_blue</item>
-    </style>
 
-    <style name="ThemeOverlay.HoloBlue.AppTheme">
-        <item name="android:colorAccent">@color/accent_theme_overlay_holo_blue</item>
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.HoloBlue.DetailedWeather">
+        <item name="colorAccent">@color/accent_theme_overlay_holo_blue</item>
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_holo_blue</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_holo_blue</item>
     </style>
 
@@ -71,14 +66,9 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_blue</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_blue</item>
-    </style>
 
-    <style name="ThemeOverlay.Blue.AppTheme">
-        <item name="android:colorAccent">@color/accent_theme_overlay_blue</item>
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Blue.DetailedWeather">
+        <item name="colorAccent">@color/accent_theme_overlay_blue</item>
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_blue</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_blue</item>
     </style>
 
@@ -103,13 +93,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_red</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_red</item>
-    </style>
 
-    <style name="ThemeOverlay.Red.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Red.DetailedWeather">
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_red</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_red</item>
     </style>
 
@@ -134,13 +119,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_pink</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_pink</item>
-    </style>
 
-    <style name="ThemeOverlay.Pink.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Pink.DetailedWeather">
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_pink</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_pink</item>
     </style>
 
@@ -163,15 +143,10 @@
         <item name="android:textColorAlertDialogListItem">@color/primary_text_theme_overlay_purple</item>
 
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
-        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_purple</item>
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_purple</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_purple</item>
-    </style>
 
-    <style name="ThemeOverlay.Purple.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Purple.DetailedWeather">
+        <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_purple</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_purple</item>
     </style>
 
@@ -196,13 +171,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_indigo</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_indigo</item>
-    </style>
 
-    <style name="ThemeOverlay.Indigo.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Indigo.DetailedWeather">
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_indigo</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_indigo</item>
     </style>
 
@@ -227,13 +197,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_cyan</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_cyan</item>
-    </style>
 
-    <style name="ThemeOverlay.Cyan.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Cyan.DetailedWeather">
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_cyan</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_cyan</item>
     </style>
 
@@ -258,13 +223,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_teal</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_teal</item>
-    </style>
 
-    <style name="ThemeOverlay.Teal.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Teal.DetailedWeather">
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_teal</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_teal</item>
     </style>
 
@@ -289,13 +249,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_green</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_green</item>
-    </style>
 
-    <style name="ThemeOverlay.Green.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Green.DetailedWeather">
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_green</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_green</item>
     </style>
 
@@ -320,14 +275,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_lime</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_lime</item>
-    </style>
 
-    <style name="ThemeOverlay.Lime.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Lime.DetailedWeather">
-
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_lime</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_lime</item>
     </style>
 
@@ -352,13 +301,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_yellow</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_yellow</item>
-    </style>
 
-    <style name="ThemeOverlay.Yellow.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Yellow.DetailedWeather">
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_yellow</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_yellow</item>
     </style>
 
@@ -383,13 +327,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_amber</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_amber</item>
-    </style>
 
-    <style name="ThemeOverlay.Amber.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Amber.DetailedWeather">
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_amber</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_amber</item>
     </style>
 
@@ -414,13 +353,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_orange</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_orange</item>
-    </style>
 
-    <style name="ThemeOverlay.Orange.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.Orange.DetailedWeather">
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_orange</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_orange</item>
     </style>
 
@@ -445,13 +379,8 @@
         <item name="android:colorControlNormal">?android:attr/textColorSecondary</item>
         <item name="android:colorControlHighlight">@color/ripple_color_theme_overlay_blue_grey</item>
         <item name="android:colorSwitchThumbNormal">@color/switch_thumb_theme_overlay_blue_grey</item>
-    </style>
 
-    <style name="ThemeOverlay.BlueGrey.AppTheme">
-        <item name="android:actionBarStyle">@style/ActionBarStyle.ThemeOverlay</item>
-    </style>
-
-    <style name="ThemeOverlay.BlueGrey.DetailedWeather">
+        <item name="colorControlHighlight">@color/ripple_color_theme_overlay_blue_grey</item>
         <item name="dividerColor">@color/divider_color_theme_overlay_blue_grey</item>
     </style>
 </resources>

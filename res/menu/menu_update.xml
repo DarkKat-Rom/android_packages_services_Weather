@@ -14,11 +14,12 @@
      limitations under the License.
 -->
 
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/item_update"
         android:title="@string/update_weather"
-        android:actionLayout="@layout/action_bar_update_button"
-        android:showAsAction="always">
+        app:actionLayout="@layout/toolbar_update_button"
+        app:showAsAction="always">
     </item>
 </menu>
