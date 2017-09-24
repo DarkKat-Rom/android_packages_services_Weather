@@ -35,11 +35,11 @@ import android.preference.PreferenceManager;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
-import net.darkkatroms.weather.preferences.CustomLocationPreference;
 import net.darkkatroms.weather.R;
 import net.darkkatroms.weather.WeatherLocationTask;
 import net.darkkatroms.weather.WeatherService;
 import net.darkkatroms.weather.WeatherInfo;
+import net.darkkatroms.weather.preferences.CustomLocationPreference;
 import net.darkkatroms.weather.utils.Config;
 
 public class SettingsFragment extends PreferenceFragment implements
