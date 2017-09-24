@@ -22,9 +22,9 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceFragment;
 import android.preference.SwitchPreference;
 
-import net.darkkatroms.weather.Config;
 import net.darkkatroms.weather.R;
 import net.darkkatroms.weather.WeatherService;
+import net.darkkatroms.weather.utils.Config;
 
 public class NotificationSettings extends PreferenceFragment implements
         OnPreferenceChangeListener {

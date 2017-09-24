@@ -34,6 +34,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import net.darkkatroms.weather.utils.Config;
+
 public class WeatherLocationTask extends AsyncTask<Void, Void, List<WeatherInfo.WeatherLocation>> {
     private ProgressDialog mProgressDialog;
     private String mLocation;

@@ -41,6 +41,11 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 
+import net.darkkatroms.weather.providers.AbstractWeatherProvider;
+import net.darkkatroms.weather.providers.WeatherContentProvider;
+import net.darkkatroms.weather.utils.Config;
+import net.darkkatroms.weather.utils.NotificationUtil;
+
 public class WeatherService extends Service {
     private static final String TAG = "WeatherService";
     private static final boolean DEBUG = false;

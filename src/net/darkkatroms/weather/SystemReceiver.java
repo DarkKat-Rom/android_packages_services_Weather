@@ -23,6 +23,8 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.util.Log;
 
+import net.darkkatroms.weather.utils.Config;
+
 public class SystemReceiver extends BroadcastReceiver {
     private static final String TAG = "WeatherService:SystemReceiver";
     private static final boolean DEBUG = false;

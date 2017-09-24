@@ -15,7 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package net.darkkatroms.weather;
+package net.darkkatroms.weather.providers;
+
+import android.content.Context;
+import android.location.Location;
+import android.util.Log;
+
+import net.darkkatroms.weather.WeatherInfo;
 
 import java.io.IOException;
 import java.util.List;
@@ -26,10 +32,6 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-
-import android.content.Context;
-import android.location.Location;
-import android.util.Log;
 
 public abstract class AbstractWeatherProvider {
     private static final String TAG = "AbstractWeatherProvider";

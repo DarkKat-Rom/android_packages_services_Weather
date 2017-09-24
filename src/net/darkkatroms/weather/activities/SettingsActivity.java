@@ -15,11 +15,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package net.darkkatroms.weather;
+package net.darkkatroms.weather.activities;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
+import net.darkkatroms.weather.R;
 import net.darkkatroms.weather.fragments.NotificationSettings;
 import net.darkkatroms.weather.fragments.SettingsFragment;
 

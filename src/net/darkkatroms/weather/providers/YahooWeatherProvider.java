@@ -14,7 +14,21 @@
  * limitations under the License.
  */
 
-package net.darkkatroms.weather;
+package net.darkkatroms.weather.providers;
+
+import android.content.Context;
+import android.location.Address;
+import android.location.Location;
+import android.location.Geocoder;
+import android.net.Uri;
+import android.text.Html;
+import android.text.TextUtils;
+import android.util.Log;
+
+import net.darkkatroms.weather.WeatherInfo;
+import net.darkkatroms.weather.WeatherInfo.DayForecast;
+import net.darkkatroms.weather.WeatherInfo.HourForecast;
+import net.darkkatroms.weather.utils.Config;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -28,9 +42,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import net.darkkatroms.weather.WeatherInfo.DayForecast;
-import net.darkkatroms.weather.WeatherInfo.HourForecast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -38,15 +49,6 @@ import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-
-import android.content.Context;
-import android.location.Address;
-import android.location.Location;
-import android.location.Geocoder;
-import android.net.Uri;
-import android.text.Html;
-import android.text.TextUtils;
-import android.util.Log;
 
 public class YahooWeatherProvider extends AbstractWeatherProvider  {
     private static final String TAG = "YahooWeatherProvider";
