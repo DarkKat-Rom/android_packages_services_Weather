@@ -1,67 +1,66 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="net.darkkatroms.weather"
-	android:versionCode="1"
-	android:versionName="1.0" >
+    package="net.darkkatroms.weather"
+    android:versionCode="1"
+    android:versionName="1.0">
 
-	<uses-permission android:name="android.permission.WAKE_LOCK" />
-	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.INTERNET" />
-	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
-	<permission android:name="net.darkkatroms.weather.READ_WEATHER" />
+    <permission android:name="net.darkkatroms.weather.READ_WEATHER" />
 
-	<uses-sdk
-		android:minSdkVersion="23"
-		android:targetSdkVersion="24" />
+    <uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="24" />
 
-	<application
+    <application
         android:icon="@mipmap/ic_launcher"
-		android:label="@string/app_name"
+        android:label="@string/app_name"
         android:theme="@style/SplashTheme"
-		android:allowBackup="true" >
+        android:allowBackup="true">
 
-		<uses-library android:name="org.apache.http.legacy" android:required="false" />
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
-		<activity
-			android:name=".activities.SettingsSplashActivity"
-			android:label="@string/weather_settings_title"
+        <activity
+            android:name=".activities.SettingsSplashActivity"
+            android:label="@string/weather_settings_title"
             android:theme="@style/SettingsSplashTheme"
-			android:exported="true"
+            android:exported="true"
             android:taskAffinity=""
             android:excludeFromRecents="true" />
 
-		<activity
-			android:name=".activities.SettingsActivity"
-			android:label="@string/weather_settings_title"
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:label="@string/weather_settings_title"
             android:theme="@style/SettingsTheme"
-			android:exported="true"
+            android:exported="true"
             android:taskAffinity=""
             android:excludeFromRecents="true" />
 
-        <!-- The detailed weather activity -->
         <activity
             android:name=".activities.DetailedWeatherActivity"
             android:hardwareAccelerated="true"
-			android:exported="true"
+            android:exported="true"
             android:taskAffinity=""
             android:excludeFromRecents="true" />
 
-		<service
-			android:name=".WeatherService"
-			android:exported="true" />
+        <service
+            android:name=".WeatherService"
+            android:exported="true" />
 
-		<provider
-			android:name=".providers.WeatherContentProvider"
-			android:authorities="net.darkkatroms.weather.provider"
-			android:exported="true"
-			android:readPermission="net.darkkatroms.weather.READ_WEATHER" />
+        <provider
+            android:name=".providers.WeatherContentProvider"
+            android:authorities="net.darkkatroms.weather.provider"
+            android:exported="true"
+            android:readPermission="net.darkkatroms.weather.READ_WEATHER" />
 
-		<receiver android:name=".SystemReceiver" >
-			<intent-filter>
-				<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-				<action android:name="android.intent.action.BOOT_COMPLETED" />
-			</intent-filter>
-		</receiver>
-	 </application>
+        <receiver android:name=".SystemReceiver" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
 </manifest>
