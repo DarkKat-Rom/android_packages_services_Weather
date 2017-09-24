@@ -18,23 +18,30 @@
 	<application
         android:icon="@mipmap/ic_launcher"
 		android:label="@string/app_name"
-        android:theme="@android:style/Theme.Material.DayNight"
+        android:theme="@style/SplashTheme"
 		android:allowBackup="true" >
 
 		<uses-library android:name="org.apache.http.legacy" android:required="false" />
 
 		<activity
-			android:name=".SettingsActivity"
+			android:name=".activities.SettingsSplashActivity"
 			android:label="@string/weather_settings_title"
-			android:theme="@android:style/Theme.Material.Settings"
+            android:theme="@style/SettingsSplashTheme"
+			android:exported="true"
+            android:taskAffinity=""
+            android:excludeFromRecents="true" />
+
+		<activity
+			android:name=".activities.SettingsActivity"
+			android:label="@string/weather_settings_title"
+            android:theme="@style/SettingsTheme"
 			android:exported="true"
             android:taskAffinity=""
             android:excludeFromRecents="true" />
 
         <!-- The detailed weather activity -->
         <activity
-            android:name=".DetailedWeatherActivity"
-            android:theme="@style/Theme.DetailedWeather"
+            android:name=".activities.DetailedWeatherActivity"
             android:hardwareAccelerated="true"
 			android:exported="true"
             android:taskAffinity=""
@@ -45,7 +52,7 @@
 			android:exported="true" />
 
 		<provider
-			android:name=".WeatherContentProvider"
+			android:name=".providers.WeatherContentProvider"
 			android:authorities="net.darkkatroms.weather.provider"
 			android:exported="true"
 			android:readPermission="net.darkkatroms.weather.READ_WEATHER" />

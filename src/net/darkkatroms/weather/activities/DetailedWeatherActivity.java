@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package net.darkkatroms.weather;
+package net.darkkatroms.weather.activities;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -57,18 +57,20 @@ import android.widget.Toolbar;
 import com.android.internal.util.darkkat.DetailedWeatherColorHelper;
 import com.android.internal.util.darkkat.ThemeHelper;
 import com.android.internal.util.darkkat.WeatherHelper;
+import net.darkkatroms.weather.R;
+import net.darkkatroms.weather.WeatherInfo;
+import net.darkkatroms.weather.WeatherInfo.DayForecast;
+import net.darkkatroms.weather.WeatherService;
+import net.darkkatroms.weather.actionBar.ViewPagerTabs;
+import net.darkkatroms.weather.fragments.CurrentWeatherFragment;
+import net.darkkatroms.weather.fragments.ForecastWeatherFragment;
+import net.darkkatroms.weather.utils.Config;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
-
-import net.darkkatroms.weather.actionBar.ViewPagerTabs;
-import net.darkkatroms.weather.fragments.CurrentWeatherFragment;
-import net.darkkatroms.weather.fragments.ForecastWeatherFragment;
-import net.darkkatroms.weather.R;
-import net.darkkatroms.weather.WeatherInfo.DayForecast;
 
 public class DetailedWeatherActivity extends Activity implements OnClickListener,
         OnLongClickListener {
@@ -140,7 +142,7 @@ public class DetailedWeatherActivity extends Activity implements OnClickListener
         super.onCreate(savedInstanceState);
 
         getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-
+        getTheme().applyStyle(R.style.DetailedWeatherTheme, true);
         mHandler = new Handler();
         mResolver = getContentResolver();
         mWeatherObserver = new WeatherObserver(mHandler);

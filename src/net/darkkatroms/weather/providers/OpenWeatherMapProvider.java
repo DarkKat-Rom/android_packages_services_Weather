@@ -14,7 +14,18 @@
  * limitations under the License.
  */
 
-package net.darkkatroms.weather;
+package net.darkkatroms.weather.providers;
+
+import android.content.Context;
+import android.location.Location;
+import android.net.Uri;
+import android.util.Log;
+
+import net.darkkatroms.weather.R;
+import net.darkkatroms.weather.WeatherInfo;
+import net.darkkatroms.weather.WeatherInfo.DayForecast;
+import net.darkkatroms.weather.WeatherInfo.HourForecast;
+import net.darkkatroms.weather.utils.Config;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,17 +33,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import net.darkkatroms.weather.WeatherInfo.DayForecast;
-import net.darkkatroms.weather.WeatherInfo.HourForecast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import android.content.Context;
-import android.location.Location;
-import android.net.Uri;
-import android.util.Log;
 
 public class OpenWeatherMapProvider extends AbstractWeatherProvider {
     private static final String TAG = "OpenWeatherMapProvider";

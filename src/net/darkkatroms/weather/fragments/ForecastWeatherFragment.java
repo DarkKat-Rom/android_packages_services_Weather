@@ -39,10 +39,10 @@ import com.android.internal.util.darkkat.DetailedWeatherColorHelper;
 import com.android.internal.util.darkkat.ThemeHelper;
 import com.android.internal.util.darkkat.WeatherHelper;
 
-import net.darkkatroms.weather.Config;
 import net.darkkatroms.weather.R;
 import net.darkkatroms.weather.WeatherInfo;
 import net.darkkatroms.weather.WeatherInfo.HourForecast;
+import net.darkkatroms.weather.utils.Config;
 
 import java.util.ArrayList;
 

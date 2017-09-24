@@ -15,11 +15,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
-package net.darkkatroms.weather;
+package net.darkkatroms.weather.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
+import net.darkkatroms.weather.providers.AbstractWeatherProvider;
+import net.darkkatroms.weather.providers.OpenWeatherMapProvider;
+import net.darkkatroms.weather.WeatherInfo;
 
 public class Config {
     public static final String PREF_KEY_ENABLE               = "enable";

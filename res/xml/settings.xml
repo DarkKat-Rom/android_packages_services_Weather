@@ -54,7 +54,7 @@
 		android:defaultValue="false"
 		android:dependency="enable" />
 
-	<net.darkkatroms.weather.CustomLocationPreference
+	<net.darkkatroms.weather.preferences.CustomLocationPreference
 		android:key="weather_custom_location_city"
 		android:title="@string/weather_custom_location_title"
 		android:dialogTitle="@string/weather_custom_location_dialog_title"
