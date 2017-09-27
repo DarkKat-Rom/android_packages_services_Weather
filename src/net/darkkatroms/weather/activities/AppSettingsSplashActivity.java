@@ -16,20 +16,10 @@
 package net.darkkatroms.weather.activities;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.app.Activity;
 
-public class SettingsSplashActivity extends Activity  {
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        startActivity(getStartActivityIntent());
-        finish();
-    }
+public class AppSettingsSplashActivity extends SettingsSplashActivity  {
 
     Intent getStartActivityIntent() {
-        return new Intent(this, SettingsActivity.class);
+        return new Intent(this, AppSettingsActivity.class);
     }
 }

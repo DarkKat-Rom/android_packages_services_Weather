@@ -59,4 +59,14 @@
 		android:title="@string/weather_custom_location_title"
 		android:dialogTitle="@string/weather_custom_location_dialog_title"
 		android:dependency="custom_location" />
+
+    <PreferenceCategory
+        android:key="settings_cat_app_drawer"
+        android:title="@string/settings_cat_app_drawer_title">
+
+	    <SwitchPreference
+		    android:key="show_settings_shortcut"
+		    android:title="@string/show_settings_shortcut" />
+
+    </PreferenceCategory>
 </PreferenceScreen>
