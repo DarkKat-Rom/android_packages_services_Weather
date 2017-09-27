@@ -19,32 +19,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/notification_title">
 
-	<SwitchPreference
-		android:key="show_notification"
-		android:title="@string/show_notification_title"
-		android:defaultValue="false" />
+    <SwitchPreference
+        android:key="show_notification"
+        android:title="@string/show_notification_title"
+        android:defaultValue="false" />
 
-	<SwitchPreference
-		android:key="notification_show_location"
-		android:title="@string/notification_show_location_title"
-		android:defaultValue="true"
-		android:dependency="show_notification" />
+    <SwitchPreference
+        android:key="notification_show_location"
+        android:title="@string/notification_show_location_title"
+        android:defaultValue="true"
+        android:dependency="show_notification" />
 
-	<SwitchPreference
-		android:key="notification_show_dk_icon"
-		android:title="@string/notification_show_dk_icon_title"
-		android:defaultValue="true"
-		android:dependency="show_notification" />
+    <SwitchPreference
+        android:key="notification_show_dk_icon"
+        android:title="@string/notification_show_dk_icon_title"
+        android:defaultValue="true"
+        android:dependency="show_notification" />
 
     <PreferenceCategory
         android:key="notification_cat_secure_lockscreen"
         android:title="@string/notification_cat_secure_lockscreen_title">
 
-	    <SwitchPreference
-		    android:key="notification_show_secure"
-		    android:title="@string/notification_show_secure_title"
-		    android:defaultValue="false"
-		    android:dependency="show_notification" />
+        <SwitchPreference
+            android:key="notification_show_secure"
+            android:title="@string/notification_show_secure_title"
+            android:defaultValue="false"
+            android:dependency="show_notification" />
 
     </PreferenceCategory>
 </PreferenceScreen>

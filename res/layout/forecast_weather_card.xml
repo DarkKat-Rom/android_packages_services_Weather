@@ -108,7 +108,6 @@
                     android:textColor="?android:attr/textColorPrimary" />
 
             </LinearLayout>
-
         </LinearLayout>
 
         <LinearLayout
@@ -206,7 +205,6 @@
                     android:textColor="?android:attr/textColorSecondary" />
 
             </LinearLayout>
-
         </LinearLayout>
 
         <View
