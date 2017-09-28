@@ -1,5 +1,5 @@
 /*
- *  Copyright (C) 2015 The OmniROM Project
+ *  Copyright (C) 2017 DarkKat
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,36 +17,12 @@
  */
 package net.darkkatroms.weather.activities;
 
-import android.os.Bundle;
-import android.preference.PreferenceActivity;
-
 import net.darkkatroms.weather.R;
-import net.darkkatroms.weather.fragments.NotificationSettings;
-import net.darkkatroms.weather.fragments.SettingsFragment;
 
-public class SettingsActivity extends PreferenceActivity  {
-
-    private static final String[] ENTRY_FRAGMENTS = {
-        SettingsFragment.class.getName(),
-        NotificationSettings.class.getName()
-    };
+public class SettingsActivity extends AppSettingsActivity  {
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        if (savedInstanceState == null && getIntent().getStringExtra(EXTRA_SHOW_FRAGMENT) == null) {
-            getFragmentManager().beginTransaction()
-                    .replace(android.R.id.content, new SettingsFragment())
-                    .commit();
-        }
-    }
-
-    @Override
-    protected boolean isValidFragment(String fragmentName) {
-        for (int i = 0; i < ENTRY_FRAGMENTS.length; i++) {
-            if (ENTRY_FRAGMENTS[i].equals(fragmentName)) return true;
-        }
-        return super.isValidFragment(fragmentName);
+    protected int getSettingsThemeResId() {
+        return R.style.SettingsTheme;
     }
 }
