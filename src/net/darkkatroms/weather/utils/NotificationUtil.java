@@ -38,7 +38,7 @@ import android.widget.TextView;
 import net.darkkatroms.weather.R;
 import net.darkkatroms.weather.WeatherInfo;
 import net.darkkatroms.weather.WeatherInfo.DayForecast;
-import net.darkkatroms.weather.activities.AppSettingsSplashActivity;
+import net.darkkatroms.weather.activities.AppSettingsActivity;
 import net.darkkatroms.weather.activities.DetailedWeatherActivity;
 import net.darkkatroms.weather.utils.Config;
 
@@ -205,7 +205,7 @@ public class NotificationUtil {
 
     private Action getSettingsAction() {
         String title = mResources.getString(R.string.action_settings_title);
-        Intent intent = new Intent(mContext, AppSettingsSplashActivity.class);
+        Intent intent = new Intent(mContext, AppSettingsActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(mContext, 6, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);

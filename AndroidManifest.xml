@@ -18,35 +18,14 @@
     <application
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/SplashTheme"
+        android:theme="@style/AppSplashTheme"
         android:allowBackup="true">
 
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
         <activity
-            android:name=".activities.AppSettingsSplashActivity"
-            android:label="@string/weather_settings_title" />
-
-        <activity
-            android:name=".activities.SettingsSplashActivity"
-            android:label="@string/weather_settings_title"
-            android:theme="@style/SettingsSplashTheme"
-            android:exported="true"
-            android:taskAffinity=""
-            android:excludeFromRecents="true" />
-
-        <activity
             android:name=".activities.AppSettingsActivity"
-            android:label="@string/weather_settings_title"
-            android:theme="@style/AppSettingsTheme" />
-
-        <activity
-            android:name=".activities.SettingsActivity"
-            android:label="@string/weather_settings_title"
-            android:theme="@style/SettingsTheme"
-            android:exported="true"
-            android:taskAffinity=""
-            android:excludeFromRecents="true" />
+            android:label="@string/weather_settings_title" />
 
         <activity
             android:name=".activities.DetailedWeatherActivity"
@@ -55,10 +34,18 @@
             android:taskAffinity=""
             android:excludeFromRecents="true" />
 
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:label="@string/weather_settings_title"
+            android:theme="@style/SettingsSplashTheme"
+            android:exported="true"
+            android:taskAffinity=""
+            android:excludeFromRecents="true" />
+
         <activity-alias
             android:name=".LauncherActivity"
             android:enabled="false"
-            android:targetActivity=".activities.AppSettingsSplashActivity">
+            android:targetActivity=".activities.AppSettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

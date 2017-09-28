@@ -15,6 +15,8 @@
 -->
 <resources>
 
+    <!-- Toolbar -->
+    <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="tab_selected_underline_height">2dp</dimen>
     <dimen name="tab_text_size">14sp</dimen>
     <dimen name="tab_elevation">2dp</dimen>
