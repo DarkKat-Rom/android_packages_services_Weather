@@ -19,7 +19,7 @@ package net.darkkatroms.weather.activities;
 
 import net.darkkatroms.weather.R;
 
-public class SettingsActivity extends AppSettingsActivity  {
+public class SettingsActivity extends AppSettingsActivity {
 
     @Override
     protected int getSettingsThemeResId() {

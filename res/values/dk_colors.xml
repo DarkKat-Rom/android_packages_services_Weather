@@ -17,23 +17,39 @@
 
     <!-- General (used for all themes) -->
 
-    <color name="tab_accent_color">#ffffff</color>
-    <color name="tab_ripple_color">@color/tab_accent_color</color>
-    <color name="tab_selected_underline_color">@color/tab_accent_color</color>
-    <color name="notification_small_icon_color">#ffffffff</color>   <!-- white -->
+    <!-- RGB based color -->
+    <color name="black">#ff000000</color>
+    <color name="white">#ffffffff</color>
+
+    <!-- Material based color -->
+    <color name="material_teal_200">#ff80cbc4</color>
+    <color name="material_teal_500">#ff009688</color>
+    <color name="material_blue_500">#ff2196f3</color>
+    <color name="material_blue_700">#ff1976d2</color>
+    <color name="material_grey_100">#fff5f5f5</color>
+    <color name="material_grey_300">#ffe0e0e0</color>
+
+    <!-- Notification colors -->
+    <color name="notification_small_icon_color">@color/white</color>   <!-- white -->
     <color name="notification_action_icon_tint">#8a000000</color>   <!-- 54% black -->
+    <color name="notification_condition_icon_tint">@color/material_teal_500</color>   <!-- material teal 500 -->
+    <!-- General (used for all themes) end -->
 
     <!-- Theme Material light -->
 
-    <!-- Detailed weather -->
-    <color name="theme_primary">#ff2196f3</color>  <!-- material blue 500 -->
-    <color name="theme_primary_dark">#ff1976d2</color>  <!-- material blue 700 -->
+    <!-- Theme colors -->
+    <color name="theme_primary">@color/material_blue_500</color>
+    <color name="theme_primary_dark">@color/material_blue_700</color>
     <color name="theme_accent">#ff5a8596</color>  <!-- 12% holo blue light over material blue grey 500 -->
-    <color name="actionbar_background_color">@color/theme_primary</color>
-    <color name="action_bar_icon_tint">#ffffffff</color>
-    <color name="actionbar_text_color">#ffffffff</color>
-    <color name="actionbar_sub_text_color">#b3ffffff</color>
-    <color name="actionbar_unselected_text_color">#b3ffffff</color>
-    <color name="card_background_color">#ffffffff</color>
-    <color name="divider_color">#1f000000</color>
+
+    <!-- Toolbar icon and text colors -->
+    <color name="toolbar_icon_tint">@color/white</color>
+    <color name="toolbar_text_color">@color/white</color>
+    <color name="toolbar_sub_text_color">#b3ffffff</color>  <!-- 70% white -->
+
+    <!-- Navigation view colors -->
+    <color name="nav_view_header_icon_bg_color">#40000000</color> <!-- 25% black -->
+
+    <!-- Weather card divider color -->
+    <color name="divider_color">#1f000000</color>  <!-- 12% black -->
 </resources>

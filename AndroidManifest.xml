@@ -13,7 +13,7 @@
 
     <uses-sdk
         android:minSdkVersion="23"
-        android:targetSdkVersion="24" />
+        android:targetSdkVersion="25" />
 
     <application
         android:icon="@mipmap/ic_launcher"
@@ -24,13 +24,13 @@
         <uses-library android:name="org.apache.http.legacy" android:required="false" />
 
         <activity
-            android:name=".activities.AppSettingsActivity"
-            android:label="@string/weather_settings_title"
-            android:exported="true" />
+            android:name=".activities.MainActivity"
+            android:hardwareAccelerated="true" />
 
         <activity
-            android:name=".activities.DetailedWeatherActivity"
-            android:hardwareAccelerated="true"
+            android:name=".activities.AppSettingsActivity"
+            android:label="@string/weather_settings_title"
+            android:theme="@style/AppSettingsSplashTheme"
             android:exported="true"
             android:taskAffinity=""
             android:excludeFromRecents="true" />
@@ -44,9 +44,16 @@
             android:excludeFromRecents="true" />
 
         <activity-alias
+            android:name=".DetailedWeatherActivity"
+            android:exported="true"
+            android:taskAffinity=""
+            android:excludeFromRecents="true"
+            android:targetActivity=".activities.MainActivity" />
+
+        <activity-alias
             android:name=".LauncherActivity"
             android:enabled="false"
-            android:targetActivity=".activities.AppSettingsActivity">
+            android:targetActivity=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

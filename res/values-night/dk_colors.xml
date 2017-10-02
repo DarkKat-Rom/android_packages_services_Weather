@@ -16,9 +16,7 @@
 <resources>
 
     <!-- Material  Darkkat -->
-    <color name="material_grey_850">#ff303030</color>
 
-    <!-- Detailed weather -->
-    <color name="card_background_color">@color/material_grey_850</color>
-    <color name="divider_color">#33ffffff</color>
+    <!-- Weather card divider color -->
+    <color name="divider_color">#1fffffff</color>  <!-- 12% white -->
 </resources>

@@ -55,7 +55,7 @@ public class AppSettingsActivity extends Activity implements
     }
 
     protected int getSettingsThemeResId() {
-        return R.style.AppTheme;
+        return R.style.AppSettingsTheme;
     }
 
     @Override

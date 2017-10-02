@@ -34,13 +34,13 @@
 
     <ImageView
         android:id="@+id/content_item_image"
-        android:maxWidth="40dp"
+        android:maxWidth="@dimen/notification_expanded_content_item_image_max_width"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:layout_gravity="center_horizontal"
-        android:paddingTop="2dp"
-        android:paddingBottom="2dp"
+        android:paddingTop="@dimen/notification_expanded_content_item_image_padding_top_bottom"
+        android:paddingBottom="@dimen/notification_expanded_content_item_image_padding_top_bottom"
         android:scaleType="centerInside"
         android:adjustViewBounds="true" />
 

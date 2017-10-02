@@ -17,12 +17,12 @@
 
     <!-- General -->
 	<string name="app_name">DK Wetter Dienst</string>
+    <string name="weather_title">Wetter</string>
 
-    <!-- Action bar -->
-	<string name="action_bar_current_title">Wetter</string>
-	<string name="today_title">Heute</string>
-	<string name="update_weather">Wetter aktuallisieren</string>
-	<string name="weather_updated">Wetterdaten wurden aktuallisiert</string>
+    <!-- Toolbar -->
+    <string name="today_title">Heute</string>
+    <string name="update_weather">Wetter aktuallisieren</string>
+    <string name="weather_updated">Wetterdaten wurden aktuallisiert</string>
 
     <!-- Detailed weather view -->
 	<string name="current_title">Aktuell</string>

@@ -15,7 +15,6 @@
 -->
 <resources>
 
-    <string name="tab_font_family" translatable="false">sans-serif</string>
     <string name="no_value" translatable="false">-</string>
     <string name="notification_text_icon_font_family" translatable="false">sans-serif</string>
 
