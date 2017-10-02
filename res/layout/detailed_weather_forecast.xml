@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:requiresFadingEdge="vertical"
-        android:fadingEdgeLength="12dp"
+        android:fadingEdgeLength="@dimen/detailed_weather_fading_edge_length"
         android:scrollbars="vertical"
         android:scrollbarStyle="outsideOverlay"
         android:scrollbarDefaultDelayBeforeFade="1500"
@@ -34,8 +34,8 @@
             android:id="@+id/forecast_cards_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
+            android:paddingTop="@dimen/detailed_weather_cards_layout_padding_top_bottom"
+            android:paddingBottom="@dimen/detailed_weather_cards_layout_padding_top_bottom"
             android:orientation="vertical">
 
             <include layout="@layout/forecast_daytemps_card" />

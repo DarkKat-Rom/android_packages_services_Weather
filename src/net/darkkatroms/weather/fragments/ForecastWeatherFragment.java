@@ -42,6 +42,7 @@ import com.android.internal.util.darkkat.WeatherHelper;
 import net.darkkatroms.weather.R;
 import net.darkkatroms.weather.WeatherInfo;
 import net.darkkatroms.weather.WeatherInfo.HourForecast;
+import net.darkkatroms.weather.activities.MainActivity;
 import net.darkkatroms.weather.utils.Config;
 
 import java.util.ArrayList;
@@ -114,7 +115,7 @@ public class ForecastWeatherFragment extends Fragment {
 
         final boolean customizeColors = !ThemeHelper.detailedWeatherUseThemeColors(getActivity());
         if (customizeColors) {
-            final int accentColor = DetailedWeatherColorHelper.getAccentColor(getActivity());
+            final int accentColor = DetailedWeatherColorHelper.getWeatherAccentColor(getActivity());
             final int backgroundColor = DetailedWeatherColorHelper.getContentBgColor(getActivity());
             final int cardBackgroundColor = DetailedWeatherColorHelper.getCardBgColor(getActivity());
             final int textColorPrimary = DetailedWeatherColorHelper.getCardPrimaryTextColor(getActivity());
@@ -134,6 +135,10 @@ public class ForecastWeatherFragment extends Fragment {
             mMaxValue.setTextColor(textColorSecondary);
             ((RippleDrawable) mProviderLink.getBackground())
                     .setColor(ColorStateList.valueOf(rippleColor));
+        }
+
+        if (savedInstanceState != null) {
+            mForecastDay = savedInstanceState.getString(MainActivity.KEY_DAY_INDEX);
         }
 
         if (mWeatherInfo != null && mCardsLayout != null && mForecastDay != null) {
@@ -401,6 +406,9 @@ public class ForecastWeatherFragment extends Fragment {
         }
 
         public void updateWeather(HourForecast h) {
+            if (getActivity() == null || mWeatherInfo == null) {
+                return;
+            }
             final Drawable icon = mWeatherInfo.getConditionIcon(
                     WeatherHelper.getDetailedWeatherConditionIconType(getActivity()),
                     h.getConditionCode());
@@ -424,5 +432,11 @@ public class ForecastWeatherFragment extends Fragment {
             humidityValue.setText(h.getFormattedHumidity());
             pressureValue.setText(h.getFormattedPressure());
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString(MainActivity.KEY_DAY_INDEX, mForecastDay);
+        super.onSaveInstanceState(outState);
     }
 }
