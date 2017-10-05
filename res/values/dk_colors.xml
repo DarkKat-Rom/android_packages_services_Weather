@@ -35,7 +35,7 @@
     <color name="notification_condition_icon_tint">@color/material_teal_500</color>   <!-- material teal 500 -->
     <!-- General (used for all themes) end -->
 
-    <!-- Theme Material light -->
+    <!-- Day (Material.Light) theme colors -->
 
     <!-- Theme colors -->
     <color name="theme_primary">@color/material_blue_500</color>

@@ -15,6 +15,7 @@
 -->
 <resources>
 
+    <!-- Night (Blackout) theme styles -->
     <style name="NavViewHeaderStyle">
         <item name="android:background">@color/theme_primary</item>
     </style>

@@ -15,6 +15,7 @@
 -->
 <resources>
 
+    <!-- Day/night (Material, Material.Light and Darkkat) theme styles -->
     <style name="NavViewHeaderStyle">
         <item name="android:background">@drawable/nav_view_header_background</item>
     </style>
