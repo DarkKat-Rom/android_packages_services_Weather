@@ -45,6 +45,7 @@ import net.darkkatroms.weather.providers.AbstractWeatherProvider;
 import net.darkkatroms.weather.providers.WeatherContentProvider;
 import net.darkkatroms.weather.utils.Config;
 import net.darkkatroms.weather.utils.NotificationUtil;
+import net.darkkatroms.weather.utils.ShortcutUtil;
 
 public class WeatherService extends Service {
     private static final String TAG = "WeatherService";
@@ -70,6 +71,7 @@ public class WeatherService extends Service {
     private static PendingIntent mAlarm;
 
     private NotificationUtil mNotificationUtil;
+    private ShortcutUtil mShortcutUtil;
 
     private static final Criteria sLocationCriteria;
     static {
@@ -96,6 +98,7 @@ public class WeatherService extends Service {
         PowerManager pm = (PowerManager) getSystemService(POWER_SERVICE);
         mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, TAG);
         mNotificationUtil = new NotificationUtil(this);
+        mShortcutUtil = new ShortcutUtil(this);
     }
 
     public static void startUpdate(Context context, boolean force) {
@@ -282,6 +285,7 @@ public class WeatherService extends Service {
                         if (Config.getShowNotification(WeatherService.this)) {
                             mNotificationUtil.sendNotification();
                         }
+                        mShortcutUtil.addOrUpdateShortcuts();
                     }
                 } finally {
                     mWakeLock.release();
