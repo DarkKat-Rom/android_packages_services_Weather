@@ -19,6 +19,9 @@
 	<string name="app_name">DK Wetter Dienst</string>
     <string name="weather_title">Wetter</string>
 
+    <!-- Navigation drawer -->
+    <string name="shortcut_disabled_message">Deaktiviert</string>
+
     <!-- Toolbar -->
     <string name="today_title">Heute</string>
     <string name="update_weather">Wetter aktuallisieren</string>

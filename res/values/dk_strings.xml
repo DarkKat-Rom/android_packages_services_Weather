@@ -19,11 +19,15 @@
     <string name="app_name">DK Weather Service</string>
     <string name="weather_title">Weather</string>
 
+    <!-- Navigation drawer -->
     <string name="menu_item_weather_today_title">Today</string>
     <string name="menu_item_weather_forecast_1_title">Forecast 1</string>
     <string name="menu_item_weather_forecast_2_title">Forecast 2</string>
     <string name="menu_item_weather_forecast_3_title">Forecast 3</string>
     <string name="menu_item_weather_forecast_4_title">Forecast 4</string>
+
+    <!-- App shortcuts -->
+    <string name="shortcut_disabled_message">Disabled</string>
 
     <!-- Toolbar -->
     <string name="today_title">Today</string>

@@ -47,6 +47,12 @@ public class SystemReceiver extends BroadcastReceiver {
                 // kick updates
                 WeatherService.scheduleUpdate(context);
             }
+        } else if (Intent.ACTION_LOCALE_CHANGED.equals(action)) {
+            if (Config.isEnabled(context)) {
+                if (DEBUG) Log.d(TAG, "locale changed");
+                // kick updates
+                WeatherService.startUpdate(context, true);
+            }
         }
     }
 }
